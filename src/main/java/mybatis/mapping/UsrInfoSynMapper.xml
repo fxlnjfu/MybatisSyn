@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.UsrInfoSynMapper">
+  <resultMap id="BaseResultMap" type="mybatis.model.UsrInfoSyn">
+    <result column="CUST_ID" jdbcType="CHAR" property="custId" />
+    <result column="ACCT_MODE" jdbcType="CHAR" property="acctMode" />
+    <result column="USR_MAIL" jdbcType="VARCHAR" property="usrMail" />
+    <result column="USR_MP" jdbcType="CHAR" property="usrMp" />
+    <result column="USR_NAME" jdbcType="VARCHAR" property="usrName" />
+    <result column="USR_NAME_SHORT" jdbcType="VARCHAR" property="usrNameShort" />
+    <result column="USR_TEL" jdbcType="VARCHAR" property="usrTel" />
+    <result column="USR_STAT" jdbcType="CHAR" property="usrStat" />
+    <result column="USR_TYPE" jdbcType="CHAR" property="usrType" />
+    <result column="CHK_TYPE" jdbcType="CHAR" property="chkType" />
+    <result column="USR_SEX" jdbcType="CHAR" property="usrSex" />
+    <result column="CERT_TYPE" jdbcType="CHAR" property="certType" />
+    <result column="CERT_ID" jdbcType="VARCHAR" property="certId" />
+    <result column="CORP_CODE" jdbcType="VARCHAR" property="corpCode" />
+    <result column="USR_PROV" jdbcType="CHAR" property="usrProv" />
+    <result column="USR_AREA" jdbcType="CHAR" property="usrArea" />
+    <result column="USR_ADDR" jdbcType="VARCHAR" property="usrAddr" />
+    <result column="USR_ZIP" jdbcType="CHAR" property="usrZip" />
+    <result column="OPEN_DATE" jdbcType="CHAR" property="openDate" />
+    <result column="OPEN_TIME" jdbcType="CHAR" property="openTime" />
+    <result column="OPEN_PROV_ID" jdbcType="CHAR" property="openProvId" />
+    <result column="OPEN_AREA_ID" jdbcType="CHAR" property="openAreaId" />
+    <result column="OPEN_BANK_ID" jdbcType="CHAR" property="openBankId" />
+    <result column="OPEN_BRANCH_NAME" jdbcType="VARCHAR" property="openBranchName" />
+    <result column="OPEN_ACCT_NAME" jdbcType="VARCHAR" property="openAcctName" />
+    <result column="OPEN_ACCT_ID" jdbcType="VARCHAR" property="openAcctId" />
+    <result column="BSP_PROV_ID" jdbcType="CHAR" property="bspProvId" />
+    <result column="BSP_AREA_ID" jdbcType="CHAR" property="bspAreaId" />
+    <result column="BSP_BRANCH_NAME" jdbcType="VARCHAR" property="bspBranchName" />
+    <result column="BSP_ACCT_NAME" jdbcType="VARCHAR" property="bspAcctName" />
+    <result column="BSP_ACCT_ID" jdbcType="VARCHAR" property="bspAcctId" />
+    <result column="PWD_CARD_ID" jdbcType="CHAR" property="pwdCardId" />
+    <result column="PAY_FLAG" jdbcType="CHAR" property="payFlag" />
+    <result column="IS_CARD_CASH" jdbcType="CHAR" property="isCardCash" />
+    <result column="IS_CARD_BSP" jdbcType="CHAR" property="isCardBsp" />
+    <result column="IS_CARD_OUT_TRF" jdbcType="CHAR" property="isCardOutTrf" />
+    <result column="CERT_CHK" jdbcType="CHAR" property="certChk" />
+    <result column="CASH_CNT" jdbcType="DECIMAL" property="cashCnt" />
+    <result column="IS_UPD_ACCT" jdbcType="CHAR" property="isUpdAcct" />
+    <result column="IS_UPD_MAG_PWD" jdbcType="CHAR" property="isUpdMagPwd" />
+    <result column="INFO_SOURCE" jdbcType="CHAR" property="infoSource" />
+    <result column="INFO_SOURCE_DESC" jdbcType="VARCHAR" property="infoSourceDesc" />
+    <result column="USER_LEVEL" jdbcType="CHAR" property="userLevel" />
+    <result column="USER_ROLE" jdbcType="CHAR" property="userRole" />
+    <result column="AUTO_PAY_MODE" jdbcType="CHAR" property="autoPayMode" />
+    <result column="IS_PRIVATE_CASH" jdbcType="CHAR" property="isPrivateCash" />
+    <result column="IS_OPEN_RICH_ACCT" jdbcType="CHAR" property="isOpenRichAcct" />
+    <result column="IS_REF_AUTO_TRF" jdbcType="CHAR" property="isRefAutoTrf" />
+    <result column="SALES_BUSDEP_ID" jdbcType="CHAR" property="salesBusdepId" />
+    <result column="PNR_INSTU" jdbcType="CHAR" property="pnrInstu" />
+    <result column="PNR_SALES" jdbcType="CHAR" property="pnrSales" />
+    <result column="TAX_REGIST_CODE" jdbcType="VARCHAR" property="taxRegistCode" />
+    <result column="TTH_MER_ID" jdbcType="CHAR" property="tthMerId" />
+    <result column="CASH_TYPE" jdbcType="CHAR" property="cashType" />
+    <result column="SITE_NAME" jdbcType="VARCHAR" property="siteName" />
+    <result column="BUS_LICE_CODE" jdbcType="VARCHAR" property="busLiceCode" />
+    <result column="IS_BINDING_PAYROLL" jdbcType="CHAR" property="isBindingPayroll" />
+    <result column="PAYROLL_CUST_ID" jdbcType="VARCHAR" property="payrollCustId" />
+    <result column="IS_BINDING_SLB" jdbcType="CHAR" property="isBindingSlb" />
+    <result column="SLB_CUST_ID" jdbcType="VARCHAR" property="slbCustId" />
+    <result column="IS_FRZ_AUTO_TRF" jdbcType="CHAR" property="isFrzAutoTrf" />
+    <result column="IS_FIN_AUTO_BASE" jdbcType="CHAR" property="isFinAutoBase" />
+    <result column="IS_BASE_AUTO_PAY" jdbcType="CHAR" property="isBaseAutoPay" />
+    <result column="USR_FOREIGN_NAME" jdbcType="VARCHAR" property="usrForeignName" />
+    <result column="IS_ACCT_CHECK" jdbcType="CHAR" property="isAcctCheck" />
+    <result column="CUID" jdbcType="VARCHAR" property="cuid" />
+    <result column="IS_TS" jdbcType="CHAR" property="isTs" />
+    <result column="BUSI_SCOPE" jdbcType="VARCHAR" property="busiScope" />
+    <result column="IS_MULT_CERT_FOR_ONE" jdbcType="CHAR" property="isMultCertForOne" />
+    <result column="ID_DATE_BEGIN" jdbcType="CHAR" property="idDateBegin" />
+    <result column="ID_DATE_END" jdbcType="CHAR" property="idDateEnd" />
+    <result column="LEGAL_NAME" jdbcType="VARCHAR" property="legalName" />
+    <result column="LEGAL_ID_TYPE" jdbcType="CHAR" property="legalIdType" />
+    <result column="LEGAL_ID_NO" jdbcType="VARCHAR" property="legalIdNo" />
+    <result column="LEGAL_ID_DATE_BEGIN" jdbcType="CHAR" property="legalIdDateBegin" />
+    <result column="LEGAL_ID_DATE_END" jdbcType="CHAR" property="legalIdDateEnd" />
+    <result column="LEGAL_USR_MP" jdbcType="VARCHAR" property="legalUsrMp" />
+    <result column="CORP_DATE" jdbcType="CHAR" property="corpDate" />
+    <result column="TAX_REG_ID_NUM" jdbcType="VARCHAR" property="taxRegIdNum" />
+    <result column="TAX_REG_ID_DATE" jdbcType="CHAR" property="taxRegIdDate" />
+    <result column="IMAGE_PATH" jdbcType="VARCHAR" property="imagePath" />
+    <result column="IS_AUDIT" jdbcType="CHAR" property="isAudit" />
+    <result column="IS_REAL_NAME_AUTH" jdbcType="VARCHAR" property="isRealNameAuth" />
+    <result column="IS_T0_CASH_FLAG" jdbcType="VARCHAR" property="isT0CashFlag" />
+    <result column="UNI_SOC_CRE_CODE" jdbcType="VARCHAR" property="uniSocCreCode" />
+    <result column="CREATE_DATE" jdbcType="CHAR" property="createDate" />
+    <result column="CREATE_TIME" jdbcType="CHAR" property="createTime" />
+    <result column="UPDATE_DATE" jdbcType="CHAR" property="updateDate" />
+    <result column="UPDATE_TIME" jdbcType="CHAR" property="updateTime" />
+    <result column="CURRENCY" jdbcType="VARCHAR" property="currency" />
+    <result column="REG_CAPL" jdbcType="VARCHAR" property="regCapl" />
+    <result column="CLOSE_DATE" jdbcType="VARCHAR" property="closeDate" />
+    <result column="CLOSE_TIME" jdbcType="VARCHAR" property="closeTime" />
+    <result column="FT_ACCT_ID" jdbcType="CHAR" property="ftAcctId" />
+    <result column="IS_FT_FIRST" jdbcType="CHAR" property="isFtFirst" />
+    <result column="BUSINESS_STAT" jdbcType="CHAR" property="businessStat" />
+    <result column="RISK_MANAGER_STAT" jdbcType="CHAR" property="riskManagerStat" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    CUST_ID, ACCT_MODE, USR_MAIL, USR_MP, USR_NAME, USR_NAME_SHORT, USR_TEL, USR_STAT, 
+    USR_TYPE, CHK_TYPE, USR_SEX, CERT_TYPE, CERT_ID, CORP_CODE, USR_PROV, USR_AREA, USR_ADDR, 
+    USR_ZIP, OPEN_DATE, OPEN_TIME, OPEN_PROV_ID, OPEN_AREA_ID, OPEN_BANK_ID, OPEN_BRANCH_NAME, 
+    OPEN_ACCT_NAME, OPEN_ACCT_ID, BSP_PROV_ID, BSP_AREA_ID, BSP_BRANCH_NAME, BSP_ACCT_NAME, 
+    BSP_ACCT_ID, PWD_CARD_ID, PAY_FLAG, IS_CARD_CASH, IS_CARD_BSP, IS_CARD_OUT_TRF, CERT_CHK, 
+    CASH_CNT, IS_UPD_ACCT, IS_UPD_MAG_PWD, INFO_SOURCE, INFO_SOURCE_DESC, USER_LEVEL, 
+    USER_ROLE, AUTO_PAY_MODE, IS_PRIVATE_CASH, IS_OPEN_RICH_ACCT, IS_REF_AUTO_TRF, SALES_BUSDEP_ID, 
+    PNR_INSTU, PNR_SALES, TAX_REGIST_CODE, TTH_MER_ID, CASH_TYPE, SITE_NAME, BUS_LICE_CODE, 
+    IS_BINDING_PAYROLL, PAYROLL_CUST_ID, IS_BINDING_SLB, SLB_CUST_ID, IS_FRZ_AUTO_TRF, 
+    IS_FIN_AUTO_BASE, IS_BASE_AUTO_PAY, USR_FOREIGN_NAME, IS_ACCT_CHECK, CUID, IS_TS, 
+    BUSI_SCOPE, IS_MULT_CERT_FOR_ONE, ID_DATE_BEGIN, ID_DATE_END, LEGAL_NAME, LEGAL_ID_TYPE, 
+    LEGAL_ID_NO, LEGAL_ID_DATE_BEGIN, LEGAL_ID_DATE_END, LEGAL_USR_MP, CORP_DATE, TAX_REG_ID_NUM, 
+    TAX_REG_ID_DATE, IMAGE_PATH, IS_AUDIT, IS_REAL_NAME_AUTH, IS_T0_CASH_FLAG, UNI_SOC_CRE_CODE, 
+    CREATE_DATE, CREATE_TIME, UPDATE_DATE, UPDATE_TIME, CURRENCY, REG_CAPL, CLOSE_DATE, 
+    CLOSE_TIME, FT_ACCT_ID, IS_FT_FIRST, BUSINESS_STAT, RISK_MANAGER_STAT
+  </sql>
+  <select id="selectByExample" parameterType="mybatis.model.UsrInfoSynExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from USR_INFO_SYN
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="mybatis.model.UsrInfoSynExample">
+    delete from USR_INFO_SYN
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="mybatis.model.UsrInfoSyn">
+    insert into USR_INFO_SYN (CUST_ID, ACCT_MODE, USR_MAIL, 
+      USR_MP, USR_NAME, USR_NAME_SHORT, 
+      USR_TEL, USR_STAT, USR_TYPE, 
+      CHK_TYPE, USR_SEX, CERT_TYPE, CERT_ID, 
+      CORP_CODE, USR_PROV, USR_AREA, 
+      USR_ADDR, USR_ZIP, OPEN_DATE, 
+      OPEN_TIME, OPEN_PROV_ID, OPEN_AREA_ID, 
+      OPEN_BANK_ID, OPEN_BRANCH_NAME, OPEN_ACCT_NAME, 
+      OPEN_ACCT_ID, BSP_PROV_ID, BSP_AREA_ID, 
+      BSP_BRANCH_NAME, BSP_ACCT_NAME, BSP_ACCT_ID, 
+      PWD_CARD_ID, PAY_FLAG, IS_CARD_CASH, 
+      IS_CARD_BSP, IS_CARD_OUT_TRF, CERT_CHK, 
+      CASH_CNT, IS_UPD_ACCT, IS_UPD_MAG_PWD, 
+      INFO_SOURCE, INFO_SOURCE_DESC, USER_LEVEL, 
+      USER_ROLE, AUTO_PAY_MODE, IS_PRIVATE_CASH, 
+      IS_OPEN_RICH_ACCT, IS_REF_AUTO_TRF, SALES_BUSDEP_ID, 
+      PNR_INSTU, PNR_SALES, TAX_REGIST_CODE, 
+      TTH_MER_ID, CASH_TYPE, SITE_NAME, 
+      BUS_LICE_CODE, IS_BINDING_PAYROLL, PAYROLL_CUST_ID, 
+      IS_BINDING_SLB, SLB_CUST_ID, IS_FRZ_AUTO_TRF, 
+      IS_FIN_AUTO_BASE, IS_BASE_AUTO_PAY, USR_FOREIGN_NAME, 
+      IS_ACCT_CHECK, CUID, IS_TS, 
+      BUSI_SCOPE, IS_MULT_CERT_FOR_ONE, ID_DATE_BEGIN, 
+      ID_DATE_END, LEGAL_NAME, LEGAL_ID_TYPE, 
+      LEGAL_ID_NO, LEGAL_ID_DATE_BEGIN, LEGAL_ID_DATE_END, 
+      LEGAL_USR_MP, CORP_DATE, TAX_REG_ID_NUM, 
+      TAX_REG_ID_DATE, IMAGE_PATH, IS_AUDIT, 
+      IS_REAL_NAME_AUTH, IS_T0_CASH_FLAG, UNI_SOC_CRE_CODE, 
+      CREATE_DATE, CREATE_TIME, UPDATE_DATE, 
+      UPDATE_TIME, CURRENCY, REG_CAPL, 
+      CLOSE_DATE, CLOSE_TIME, FT_ACCT_ID, 
+      IS_FT_FIRST, BUSINESS_STAT, RISK_MANAGER_STAT
+      )
+    values (#{custId,jdbcType=CHAR}, #{acctMode,jdbcType=CHAR}, #{usrMail,jdbcType=VARCHAR}, 
+      #{usrMp,jdbcType=CHAR}, #{usrName,jdbcType=VARCHAR}, #{usrNameShort,jdbcType=VARCHAR}, 
+      #{usrTel,jdbcType=VARCHAR}, #{usrStat,jdbcType=CHAR}, #{usrType,jdbcType=CHAR}, 
+      #{chkType,jdbcType=CHAR}, #{usrSex,jdbcType=CHAR}, #{certType,jdbcType=CHAR}, #{certId,jdbcType=VARCHAR}, 
+      #{corpCode,jdbcType=VARCHAR}, #{usrProv,jdbcType=CHAR}, #{usrArea,jdbcType=CHAR}, 
+      #{usrAddr,jdbcType=VARCHAR}, #{usrZip,jdbcType=CHAR}, #{openDate,jdbcType=CHAR}, 
+      #{openTime,jdbcType=CHAR}, #{openProvId,jdbcType=CHAR}, #{openAreaId,jdbcType=CHAR}, 
+      #{openBankId,jdbcType=CHAR}, #{openBranchName,jdbcType=VARCHAR}, #{openAcctName,jdbcType=VARCHAR}, 
+      #{openAcctId,jdbcType=VARCHAR}, #{bspProvId,jdbcType=CHAR}, #{bspAreaId,jdbcType=CHAR}, 
+      #{bspBranchName,jdbcType=VARCHAR}, #{bspAcctName,jdbcType=VARCHAR}, #{bspAcctId,jdbcType=VARCHAR}, 
+      #{pwdCardId,jdbcType=CHAR}, #{payFlag,jdbcType=CHAR}, #{isCardCash,jdbcType=CHAR}, 
+      #{isCardBsp,jdbcType=CHAR}, #{isCardOutTrf,jdbcType=CHAR}, #{certChk,jdbcType=CHAR}, 
+      #{cashCnt,jdbcType=DECIMAL}, #{isUpdAcct,jdbcType=CHAR}, #{isUpdMagPwd,jdbcType=CHAR}, 
+      #{infoSource,jdbcType=CHAR}, #{infoSourceDesc,jdbcType=VARCHAR}, #{userLevel,jdbcType=CHAR}, 
+      #{userRole,jdbcType=CHAR}, #{autoPayMode,jdbcType=CHAR}, #{isPrivateCash,jdbcType=CHAR}, 
+      #{isOpenRichAcct,jdbcType=CHAR}, #{isRefAutoTrf,jdbcType=CHAR}, #{salesBusdepId,jdbcType=CHAR}, 
+      #{pnrInstu,jdbcType=CHAR}, #{pnrSales,jdbcType=CHAR}, #{taxRegistCode,jdbcType=VARCHAR}, 
+      #{tthMerId,jdbcType=CHAR}, #{cashType,jdbcType=CHAR}, #{siteName,jdbcType=VARCHAR}, 
+      #{busLiceCode,jdbcType=VARCHAR}, #{isBindingPayroll,jdbcType=CHAR}, #{payrollCustId,jdbcType=VARCHAR}, 
+      #{isBindingSlb,jdbcType=CHAR}, #{slbCustId,jdbcType=VARCHAR}, #{isFrzAutoTrf,jdbcType=CHAR}, 
+      #{isFinAutoBase,jdbcType=CHAR}, #{isBaseAutoPay,jdbcType=CHAR}, #{usrForeignName,jdbcType=VARCHAR}, 
+      #{isAcctCheck,jdbcType=CHAR}, #{cuid,jdbcType=VARCHAR}, #{isTs,jdbcType=CHAR}, 
+      #{busiScope,jdbcType=VARCHAR}, #{isMultCertForOne,jdbcType=CHAR}, #{idDateBegin,jdbcType=CHAR}, 
+      #{idDateEnd,jdbcType=CHAR}, #{legalName,jdbcType=VARCHAR}, #{legalIdType,jdbcType=CHAR}, 
+      #{legalIdNo,jdbcType=VARCHAR}, #{legalIdDateBegin,jdbcType=CHAR}, #{legalIdDateEnd,jdbcType=CHAR}, 
+      #{legalUsrMp,jdbcType=VARCHAR}, #{corpDate,jdbcType=CHAR}, #{taxRegIdNum,jdbcType=VARCHAR}, 
+      #{taxRegIdDate,jdbcType=CHAR}, #{imagePath,jdbcType=VARCHAR}, #{isAudit,jdbcType=CHAR}, 
+      #{isRealNameAuth,jdbcType=VARCHAR}, #{isT0CashFlag,jdbcType=VARCHAR}, #{uniSocCreCode,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=CHAR}, #{createTime,jdbcType=CHAR}, #{updateDate,jdbcType=CHAR}, 
+      #{updateTime,jdbcType=CHAR}, #{currency,jdbcType=VARCHAR}, #{regCapl,jdbcType=VARCHAR}, 
+      #{closeDate,jdbcType=VARCHAR}, #{closeTime,jdbcType=VARCHAR}, #{ftAcctId,jdbcType=CHAR}, 
+      #{isFtFirst,jdbcType=CHAR}, #{businessStat,jdbcType=CHAR}, #{riskManagerStat,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mybatis.model.UsrInfoSyn">
+    insert into USR_INFO_SYN
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="custId != null">
+        CUST_ID,
+      </if>
+      <if test="acctMode != null">
+        ACCT_MODE,
+      </if>
+      <if test="usrMail != null">
+        USR_MAIL,
+      </if>
+      <if test="usrMp != null">
+        USR_MP,
+      </if>
+      <if test="usrName != null">
+        USR_NAME,
+      </if>
+      <if test="usrNameShort != null">
+        USR_NAME_SHORT,
+      </if>
+      <if test="usrTel != null">
+        USR_TEL,
+      </if>
+      <if test="usrStat != null">
+        USR_STAT,
+      </if>
+      <if test="usrType != null">
+        USR_TYPE,
+      </if>
+      <if test="chkType != null">
+        CHK_TYPE,
+      </if>
+      <if test="usrSex != null">
+        USR_SEX,
+      </if>
+      <if test="certType != null">
+        CERT_TYPE,
+      </if>
+      <if test="certId != null">
+        CERT_ID,
+      </if>
+      <if test="corpCode != null">
+        CORP_CODE,
+      </if>
+      <if test="usrProv != null">
+        USR_PROV,
+      </if>
+      <if test="usrArea != null">
+        USR_AREA,
+      </if>
+      <if test="usrAddr != null">
+        USR_ADDR,
+      </if>
+      <if test="usrZip != null">
+        USR_ZIP,
+      </if>
+      <if test="openDate != null">
+        OPEN_DATE,
+      </if>
+      <if test="openTime != null">
+        OPEN_TIME,
+      </if>
+      <if test="openProvId != null">
+        OPEN_PROV_ID,
+      </if>
+      <if test="openAreaId != null">
+        OPEN_AREA_ID,
+      </if>
+      <if test="openBankId != null">
+        OPEN_BANK_ID,
+      </if>
+      <if test="openBranchName != null">
+        OPEN_BRANCH_NAME,
+      </if>
+      <if test="openAcctName != null">
+        OPEN_ACCT_NAME,
+      </if>
+      <if test="openAcctId != null">
+        OPEN_ACCT_ID,
+      </if>
+      <if test="bspProvId != null">
+        BSP_PROV_ID,
+      </if>
+      <if test="bspAreaId != null">
+        BSP_AREA_ID,
+      </if>
+      <if test="bspBranchName != null">
+        BSP_BRANCH_NAME,
+      </if>
+      <if test="bspAcctName != null">
+        BSP_ACCT_NAME,
+      </if>
+      <if test="bspAcctId != null">
+        BSP_ACCT_ID,
+      </if>
+      <if test="pwdCardId != null">
+        PWD_CARD_ID,
+      </if>
+      <if test="payFlag != null">
+        PAY_FLAG,
+      </if>
+      <if test="isCardCash != null">
+        IS_CARD_CASH,
+      </if>
+      <if test="isCardBsp != null">
+        IS_CARD_BSP,
+      </if>
+      <if test="isCardOutTrf != null">
+        IS_CARD_OUT_TRF,
+      </if>
+      <if test="certChk != null">
+        CERT_CHK,
+      </if>
+      <if test="cashCnt != null">
+        CASH_CNT,
+      </if>
+      <if test="isUpdAcct != null">
+        IS_UPD_ACCT,
+      </if>
+      <if test="isUpdMagPwd != null">
+        IS_UPD_MAG_PWD,
+      </if>
+      <if test="infoSource != null">
+        INFO_SOURCE,
+      </if>
+      <if test="infoSourceDesc != null">
+        INFO_SOURCE_DESC,
+      </if>
+      <if test="userLevel != null">
+        USER_LEVEL,
+      </if>
+      <if test="userRole != null">
+        USER_ROLE,
+      </if>
+      <if test="autoPayMode != null">
+        AUTO_PAY_MODE,
+      </if>
+      <if test="isPrivateCash != null">
+        IS_PRIVATE_CASH,
+      </if>
+      <if test="isOpenRichAcct != null">
+        IS_OPEN_RICH_ACCT,
+      </if>
+      <if test="isRefAutoTrf != null">
+        IS_REF_AUTO_TRF,
+      </if>
+      <if test="salesBusdepId != null">
+        SALES_BUSDEP_ID,
+      </if>
+      <if test="pnrInstu != null">
+        PNR_INSTU,
+      </if>
+      <if test="pnrSales != null">
+        PNR_SALES,
+      </if>
+      <if test="taxRegistCode != null">
+        TAX_REGIST_CODE,
+      </if>
+      <if test="tthMerId != null">
+        TTH_MER_ID,
+      </if>
+      <if test="cashType != null">
+        CASH_TYPE,
+      </if>
+      <if test="siteName != null">
+        SITE_NAME,
+      </if>
+      <if test="busLiceCode != null">
+        BUS_LICE_CODE,
+      </if>
+      <if test="isBindingPayroll != null">
+        IS_BINDING_PAYROLL,
+      </if>
+      <if test="payrollCustId != null">
+        PAYROLL_CUST_ID,
+      </if>
+      <if test="isBindingSlb != null">
+        IS_BINDING_SLB,
+      </if>
+      <if test="slbCustId != null">
+        SLB_CUST_ID,
+      </if>
+      <if test="isFrzAutoTrf != null">
+        IS_FRZ_AUTO_TRF,
+      </if>
+      <if test="isFinAutoBase != null">
+        IS_FIN_AUTO_BASE,
+      </if>
+      <if test="isBaseAutoPay != null">
+        IS_BASE_AUTO_PAY,
+      </if>
+      <if test="usrForeignName != null">
+        USR_FOREIGN_NAME,
+      </if>
+      <if test="isAcctCheck != null">
+        IS_ACCT_CHECK,
+      </if>
+      <if test="cuid != null">
+        CUID,
+      </if>
+      <if test="isTs != null">
+        IS_TS,
+      </if>
+      <if test="busiScope != null">
+        BUSI_SCOPE,
+      </if>
+      <if test="isMultCertForOne != null">
+        IS_MULT_CERT_FOR_ONE,
+      </if>
+      <if test="idDateBegin != null">
+        ID_DATE_BEGIN,
+      </if>
+      <if test="idDateEnd != null">
+        ID_DATE_END,
+      </if>
+      <if test="legalName != null">
+        LEGAL_NAME,
+      </if>
+      <if test="legalIdType != null">
+        LEGAL_ID_TYPE,
+      </if>
+      <if test="legalIdNo != null">
+        LEGAL_ID_NO,
+      </if>
+      <if test="legalIdDateBegin != null">
+        LEGAL_ID_DATE_BEGIN,
+      </if>
+      <if test="legalIdDateEnd != null">
+        LEGAL_ID_DATE_END,
+      </if>
+      <if test="legalUsrMp != null">
+        LEGAL_USR_MP,
+      </if>
+      <if test="corpDate != null">
+        CORP_DATE,
+      </if>
+      <if test="taxRegIdNum != null">
+        TAX_REG_ID_NUM,
+      </if>
+      <if test="taxRegIdDate != null">
+        TAX_REG_ID_DATE,
+      </if>
+      <if test="imagePath != null">
+        IMAGE_PATH,
+      </if>
+      <if test="isAudit != null">
+        IS_AUDIT,
+      </if>
+      <if test="isRealNameAuth != null">
+        IS_REAL_NAME_AUTH,
+      </if>
+      <if test="isT0CashFlag != null">
+        IS_T0_CASH_FLAG,
+      </if>
+      <if test="uniSocCreCode != null">
+        UNI_SOC_CRE_CODE,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="currency != null">
+        CURRENCY,
+      </if>
+      <if test="regCapl != null">
+        REG_CAPL,
+      </if>
+      <if test="closeDate != null">
+        CLOSE_DATE,
+      </if>
+      <if test="closeTime != null">
+        CLOSE_TIME,
+      </if>
+      <if test="ftAcctId != null">
+        FT_ACCT_ID,
+      </if>
+      <if test="isFtFirst != null">
+        IS_FT_FIRST,
+      </if>
+      <if test="businessStat != null">
+        BUSINESS_STAT,
+      </if>
+      <if test="riskManagerStat != null">
+        RISK_MANAGER_STAT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="custId != null">
+        #{custId,jdbcType=CHAR},
+      </if>
+      <if test="acctMode != null">
+        #{acctMode,jdbcType=CHAR},
+      </if>
+      <if test="usrMail != null">
+        #{usrMail,jdbcType=VARCHAR},
+      </if>
+      <if test="usrMp != null">
+        #{usrMp,jdbcType=CHAR},
+      </if>
+      <if test="usrName != null">
+        #{usrName,jdbcType=VARCHAR},
+      </if>
+      <if test="usrNameShort != null">
+        #{usrNameShort,jdbcType=VARCHAR},
+      </if>
+      <if test="usrTel != null">
+        #{usrTel,jdbcType=VARCHAR},
+      </if>
+      <if test="usrStat != null">
+        #{usrStat,jdbcType=CHAR},
+      </if>
+      <if test="usrType != null">
+        #{usrType,jdbcType=CHAR},
+      </if>
+      <if test="chkType != null">
+        #{chkType,jdbcType=CHAR},
+      </if>
+      <if test="usrSex != null">
+        #{usrSex,jdbcType=CHAR},
+      </if>
+      <if test="certType != null">
+        #{certType,jdbcType=CHAR},
+      </if>
+      <if test="certId != null">
+        #{certId,jdbcType=VARCHAR},
+      </if>
+      <if test="corpCode != null">
+        #{corpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="usrProv != null">
+        #{usrProv,jdbcType=CHAR},
+      </if>
+      <if test="usrArea != null">
+        #{usrArea,jdbcType=CHAR},
+      </if>
+      <if test="usrAddr != null">
+        #{usrAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="usrZip != null">
+        #{usrZip,jdbcType=CHAR},
+      </if>
+      <if test="openDate != null">
+        #{openDate,jdbcType=CHAR},
+      </if>
+      <if test="openTime != null">
+        #{openTime,jdbcType=CHAR},
+      </if>
+      <if test="openProvId != null">
+        #{openProvId,jdbcType=CHAR},
+      </if>
+      <if test="openAreaId != null">
+        #{openAreaId,jdbcType=CHAR},
+      </if>
+      <if test="openBankId != null">
+        #{openBankId,jdbcType=CHAR},
+      </if>
+      <if test="openBranchName != null">
+        #{openBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="openAcctName != null">
+        #{openAcctName,jdbcType=VARCHAR},
+      </if>
+      <if test="openAcctId != null">
+        #{openAcctId,jdbcType=VARCHAR},
+      </if>
+      <if test="bspProvId != null">
+        #{bspProvId,jdbcType=CHAR},
+      </if>
+      <if test="bspAreaId != null">
+        #{bspAreaId,jdbcType=CHAR},
+      </if>
+      <if test="bspBranchName != null">
+        #{bspBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="bspAcctName != null">
+        #{bspAcctName,jdbcType=VARCHAR},
+      </if>
+      <if test="bspAcctId != null">
+        #{bspAcctId,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdCardId != null">
+        #{pwdCardId,jdbcType=CHAR},
+      </if>
+      <if test="payFlag != null">
+        #{payFlag,jdbcType=CHAR},
+      </if>
+      <if test="isCardCash != null">
+        #{isCardCash,jdbcType=CHAR},
+      </if>
+      <if test="isCardBsp != null">
+        #{isCardBsp,jdbcType=CHAR},
+      </if>
+      <if test="isCardOutTrf != null">
+        #{isCardOutTrf,jdbcType=CHAR},
+      </if>
+      <if test="certChk != null">
+        #{certChk,jdbcType=CHAR},
+      </if>
+      <if test="cashCnt != null">
+        #{cashCnt,jdbcType=DECIMAL},
+      </if>
+      <if test="isUpdAcct != null">
+        #{isUpdAcct,jdbcType=CHAR},
+      </if>
+      <if test="isUpdMagPwd != null">
+        #{isUpdMagPwd,jdbcType=CHAR},
+      </if>
+      <if test="infoSource != null">
+        #{infoSource,jdbcType=CHAR},
+      </if>
+      <if test="infoSourceDesc != null">
+        #{infoSourceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="userLevel != null">
+        #{userLevel,jdbcType=CHAR},
+      </if>
+      <if test="userRole != null">
+        #{userRole,jdbcType=CHAR},
+      </if>
+      <if test="autoPayMode != null">
+        #{autoPayMode,jdbcType=CHAR},
+      </if>
+      <if test="isPrivateCash != null">
+        #{isPrivateCash,jdbcType=CHAR},
+      </if>
+      <if test="isOpenRichAcct != null">
+        #{isOpenRichAcct,jdbcType=CHAR},
+      </if>
+      <if test="isRefAutoTrf != null">
+        #{isRefAutoTrf,jdbcType=CHAR},
+      </if>
+      <if test="salesBusdepId != null">
+        #{salesBusdepId,jdbcType=CHAR},
+      </if>
+      <if test="pnrInstu != null">
+        #{pnrInstu,jdbcType=CHAR},
+      </if>
+      <if test="pnrSales != null">
+        #{pnrSales,jdbcType=CHAR},
+      </if>
+      <if test="taxRegistCode != null">
+        #{taxRegistCode,jdbcType=VARCHAR},
+      </if>
+      <if test="tthMerId != null">
+        #{tthMerId,jdbcType=CHAR},
+      </if>
+      <if test="cashType != null">
+        #{cashType,jdbcType=CHAR},
+      </if>
+      <if test="siteName != null">
+        #{siteName,jdbcType=VARCHAR},
+      </if>
+      <if test="busLiceCode != null">
+        #{busLiceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isBindingPayroll != null">
+        #{isBindingPayroll,jdbcType=CHAR},
+      </if>
+      <if test="payrollCustId != null">
+        #{payrollCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="isBindingSlb != null">
+        #{isBindingSlb,jdbcType=CHAR},
+      </if>
+      <if test="slbCustId != null">
+        #{slbCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="isFrzAutoTrf != null">
+        #{isFrzAutoTrf,jdbcType=CHAR},
+      </if>
+      <if test="isFinAutoBase != null">
+        #{isFinAutoBase,jdbcType=CHAR},
+      </if>
+      <if test="isBaseAutoPay != null">
+        #{isBaseAutoPay,jdbcType=CHAR},
+      </if>
+      <if test="usrForeignName != null">
+        #{usrForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="isAcctCheck != null">
+        #{isAcctCheck,jdbcType=CHAR},
+      </if>
+      <if test="cuid != null">
+        #{cuid,jdbcType=VARCHAR},
+      </if>
+      <if test="isTs != null">
+        #{isTs,jdbcType=CHAR},
+      </if>
+      <if test="busiScope != null">
+        #{busiScope,jdbcType=VARCHAR},
+      </if>
+      <if test="isMultCertForOne != null">
+        #{isMultCertForOne,jdbcType=CHAR},
+      </if>
+      <if test="idDateBegin != null">
+        #{idDateBegin,jdbcType=CHAR},
+      </if>
+      <if test="idDateEnd != null">
+        #{idDateEnd,jdbcType=CHAR},
+      </if>
+      <if test="legalName != null">
+        #{legalName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalIdType != null">
+        #{legalIdType,jdbcType=CHAR},
+      </if>
+      <if test="legalIdNo != null">
+        #{legalIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="legalIdDateBegin != null">
+        #{legalIdDateBegin,jdbcType=CHAR},
+      </if>
+      <if test="legalIdDateEnd != null">
+        #{legalIdDateEnd,jdbcType=CHAR},
+      </if>
+      <if test="legalUsrMp != null">
+        #{legalUsrMp,jdbcType=VARCHAR},
+      </if>
+      <if test="corpDate != null">
+        #{corpDate,jdbcType=CHAR},
+      </if>
+      <if test="taxRegIdNum != null">
+        #{taxRegIdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegIdDate != null">
+        #{taxRegIdDate,jdbcType=CHAR},
+      </if>
+      <if test="imagePath != null">
+        #{imagePath,jdbcType=VARCHAR},
+      </if>
+      <if test="isAudit != null">
+        #{isAudit,jdbcType=CHAR},
+      </if>
+      <if test="isRealNameAuth != null">
+        #{isRealNameAuth,jdbcType=VARCHAR},
+      </if>
+      <if test="isT0CashFlag != null">
+        #{isT0CashFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="uniSocCreCode != null">
+        #{uniSocCreCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=CHAR},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=CHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=CHAR},
+      </if>
+      <if test="currency != null">
+        #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="regCapl != null">
+        #{regCapl,jdbcType=VARCHAR},
+      </if>
+      <if test="closeDate != null">
+        #{closeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="closeTime != null">
+        #{closeTime,jdbcType=VARCHAR},
+      </if>
+      <if test="ftAcctId != null">
+        #{ftAcctId,jdbcType=CHAR},
+      </if>
+      <if test="isFtFirst != null">
+        #{isFtFirst,jdbcType=CHAR},
+      </if>
+      <if test="businessStat != null">
+        #{businessStat,jdbcType=CHAR},
+      </if>
+      <if test="riskManagerStat != null">
+        #{riskManagerStat,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="mybatis.model.UsrInfoSynExample" resultType="java.lang.Long">
+    select count(*) from USR_INFO_SYN
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update USR_INFO_SYN
+    <set>
+      <if test="record.custId != null">
+        CUST_ID = #{record.custId,jdbcType=CHAR},
+      </if>
+      <if test="record.acctMode != null">
+        ACCT_MODE = #{record.acctMode,jdbcType=CHAR},
+      </if>
+      <if test="record.usrMail != null">
+        USR_MAIL = #{record.usrMail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrMp != null">
+        USR_MP = #{record.usrMp,jdbcType=CHAR},
+      </if>
+      <if test="record.usrName != null">
+        USR_NAME = #{record.usrName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrNameShort != null">
+        USR_NAME_SHORT = #{record.usrNameShort,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrTel != null">
+        USR_TEL = #{record.usrTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrStat != null">
+        USR_STAT = #{record.usrStat,jdbcType=CHAR},
+      </if>
+      <if test="record.usrType != null">
+        USR_TYPE = #{record.usrType,jdbcType=CHAR},
+      </if>
+      <if test="record.chkType != null">
+        CHK_TYPE = #{record.chkType,jdbcType=CHAR},
+      </if>
+      <if test="record.usrSex != null">
+        USR_SEX = #{record.usrSex,jdbcType=CHAR},
+      </if>
+      <if test="record.certType != null">
+        CERT_TYPE = #{record.certType,jdbcType=CHAR},
+      </if>
+      <if test="record.certId != null">
+        CERT_ID = #{record.certId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corpCode != null">
+        CORP_CODE = #{record.corpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrProv != null">
+        USR_PROV = #{record.usrProv,jdbcType=CHAR},
+      </if>
+      <if test="record.usrArea != null">
+        USR_AREA = #{record.usrArea,jdbcType=CHAR},
+      </if>
+      <if test="record.usrAddr != null">
+        USR_ADDR = #{record.usrAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrZip != null">
+        USR_ZIP = #{record.usrZip,jdbcType=CHAR},
+      </if>
+      <if test="record.openDate != null">
+        OPEN_DATE = #{record.openDate,jdbcType=CHAR},
+      </if>
+      <if test="record.openTime != null">
+        OPEN_TIME = #{record.openTime,jdbcType=CHAR},
+      </if>
+      <if test="record.openProvId != null">
+        OPEN_PROV_ID = #{record.openProvId,jdbcType=CHAR},
+      </if>
+      <if test="record.openAreaId != null">
+        OPEN_AREA_ID = #{record.openAreaId,jdbcType=CHAR},
+      </if>
+      <if test="record.openBankId != null">
+        OPEN_BANK_ID = #{record.openBankId,jdbcType=CHAR},
+      </if>
+      <if test="record.openBranchName != null">
+        OPEN_BRANCH_NAME = #{record.openBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openAcctName != null">
+        OPEN_ACCT_NAME = #{record.openAcctName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openAcctId != null">
+        OPEN_ACCT_ID = #{record.openAcctId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bspProvId != null">
+        BSP_PROV_ID = #{record.bspProvId,jdbcType=CHAR},
+      </if>
+      <if test="record.bspAreaId != null">
+        BSP_AREA_ID = #{record.bspAreaId,jdbcType=CHAR},
+      </if>
+      <if test="record.bspBranchName != null">
+        BSP_BRANCH_NAME = #{record.bspBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bspAcctName != null">
+        BSP_ACCT_NAME = #{record.bspAcctName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bspAcctId != null">
+        BSP_ACCT_ID = #{record.bspAcctId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwdCardId != null">
+        PWD_CARD_ID = #{record.pwdCardId,jdbcType=CHAR},
+      </if>
+      <if test="record.payFlag != null">
+        PAY_FLAG = #{record.payFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.isCardCash != null">
+        IS_CARD_CASH = #{record.isCardCash,jdbcType=CHAR},
+      </if>
+      <if test="record.isCardBsp != null">
+        IS_CARD_BSP = #{record.isCardBsp,jdbcType=CHAR},
+      </if>
+      <if test="record.isCardOutTrf != null">
+        IS_CARD_OUT_TRF = #{record.isCardOutTrf,jdbcType=CHAR},
+      </if>
+      <if test="record.certChk != null">
+        CERT_CHK = #{record.certChk,jdbcType=CHAR},
+      </if>
+      <if test="record.cashCnt != null">
+        CASH_CNT = #{record.cashCnt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isUpdAcct != null">
+        IS_UPD_ACCT = #{record.isUpdAcct,jdbcType=CHAR},
+      </if>
+      <if test="record.isUpdMagPwd != null">
+        IS_UPD_MAG_PWD = #{record.isUpdMagPwd,jdbcType=CHAR},
+      </if>
+      <if test="record.infoSource != null">
+        INFO_SOURCE = #{record.infoSource,jdbcType=CHAR},
+      </if>
+      <if test="record.infoSourceDesc != null">
+        INFO_SOURCE_DESC = #{record.infoSourceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userLevel != null">
+        USER_LEVEL = #{record.userLevel,jdbcType=CHAR},
+      </if>
+      <if test="record.userRole != null">
+        USER_ROLE = #{record.userRole,jdbcType=CHAR},
+      </if>
+      <if test="record.autoPayMode != null">
+        AUTO_PAY_MODE = #{record.autoPayMode,jdbcType=CHAR},
+      </if>
+      <if test="record.isPrivateCash != null">
+        IS_PRIVATE_CASH = #{record.isPrivateCash,jdbcType=CHAR},
+      </if>
+      <if test="record.isOpenRichAcct != null">
+        IS_OPEN_RICH_ACCT = #{record.isOpenRichAcct,jdbcType=CHAR},
+      </if>
+      <if test="record.isRefAutoTrf != null">
+        IS_REF_AUTO_TRF = #{record.isRefAutoTrf,jdbcType=CHAR},
+      </if>
+      <if test="record.salesBusdepId != null">
+        SALES_BUSDEP_ID = #{record.salesBusdepId,jdbcType=CHAR},
+      </if>
+      <if test="record.pnrInstu != null">
+        PNR_INSTU = #{record.pnrInstu,jdbcType=CHAR},
+      </if>
+      <if test="record.pnrSales != null">
+        PNR_SALES = #{record.pnrSales,jdbcType=CHAR},
+      </if>
+      <if test="record.taxRegistCode != null">
+        TAX_REGIST_CODE = #{record.taxRegistCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tthMerId != null">
+        TTH_MER_ID = #{record.tthMerId,jdbcType=CHAR},
+      </if>
+      <if test="record.cashType != null">
+        CASH_TYPE = #{record.cashType,jdbcType=CHAR},
+      </if>
+      <if test="record.siteName != null">
+        SITE_NAME = #{record.siteName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busLiceCode != null">
+        BUS_LICE_CODE = #{record.busLiceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isBindingPayroll != null">
+        IS_BINDING_PAYROLL = #{record.isBindingPayroll,jdbcType=CHAR},
+      </if>
+      <if test="record.payrollCustId != null">
+        PAYROLL_CUST_ID = #{record.payrollCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isBindingSlb != null">
+        IS_BINDING_SLB = #{record.isBindingSlb,jdbcType=CHAR},
+      </if>
+      <if test="record.slbCustId != null">
+        SLB_CUST_ID = #{record.slbCustId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isFrzAutoTrf != null">
+        IS_FRZ_AUTO_TRF = #{record.isFrzAutoTrf,jdbcType=CHAR},
+      </if>
+      <if test="record.isFinAutoBase != null">
+        IS_FIN_AUTO_BASE = #{record.isFinAutoBase,jdbcType=CHAR},
+      </if>
+      <if test="record.isBaseAutoPay != null">
+        IS_BASE_AUTO_PAY = #{record.isBaseAutoPay,jdbcType=CHAR},
+      </if>
+      <if test="record.usrForeignName != null">
+        USR_FOREIGN_NAME = #{record.usrForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAcctCheck != null">
+        IS_ACCT_CHECK = #{record.isAcctCheck,jdbcType=CHAR},
+      </if>
+      <if test="record.cuid != null">
+        CUID = #{record.cuid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isTs != null">
+        IS_TS = #{record.isTs,jdbcType=CHAR},
+      </if>
+      <if test="record.busiScope != null">
+        BUSI_SCOPE = #{record.busiScope,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isMultCertForOne != null">
+        IS_MULT_CERT_FOR_ONE = #{record.isMultCertForOne,jdbcType=CHAR},
+      </if>
+      <if test="record.idDateBegin != null">
+        ID_DATE_BEGIN = #{record.idDateBegin,jdbcType=CHAR},
+      </if>
+      <if test="record.idDateEnd != null">
+        ID_DATE_END = #{record.idDateEnd,jdbcType=CHAR},
+      </if>
+      <if test="record.legalName != null">
+        LEGAL_NAME = #{record.legalName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalIdType != null">
+        LEGAL_ID_TYPE = #{record.legalIdType,jdbcType=CHAR},
+      </if>
+      <if test="record.legalIdNo != null">
+        LEGAL_ID_NO = #{record.legalIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalIdDateBegin != null">
+        LEGAL_ID_DATE_BEGIN = #{record.legalIdDateBegin,jdbcType=CHAR},
+      </if>
+      <if test="record.legalIdDateEnd != null">
+        LEGAL_ID_DATE_END = #{record.legalIdDateEnd,jdbcType=CHAR},
+      </if>
+      <if test="record.legalUsrMp != null">
+        LEGAL_USR_MP = #{record.legalUsrMp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corpDate != null">
+        CORP_DATE = #{record.corpDate,jdbcType=CHAR},
+      </if>
+      <if test="record.taxRegIdNum != null">
+        TAX_REG_ID_NUM = #{record.taxRegIdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxRegIdDate != null">
+        TAX_REG_ID_DATE = #{record.taxRegIdDate,jdbcType=CHAR},
+      </if>
+      <if test="record.imagePath != null">
+        IMAGE_PATH = #{record.imagePath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAudit != null">
+        IS_AUDIT = #{record.isAudit,jdbcType=CHAR},
+      </if>
+      <if test="record.isRealNameAuth != null">
+        IS_REAL_NAME_AUTH = #{record.isRealNameAuth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isT0CashFlag != null">
+        IS_T0_CASH_FLAG = #{record.isT0CashFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uniSocCreCode != null">
+        UNI_SOC_CRE_CODE = #{record.uniSocCreCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null">
+        CREATE_DATE = #{record.createDate,jdbcType=CHAR},
+      </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=CHAR},
+      </if>
+      <if test="record.updateDate != null">
+        UPDATE_DATE = #{record.updateDate,jdbcType=CHAR},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=CHAR},
+      </if>
+      <if test="record.currency != null">
+        CURRENCY = #{record.currency,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regCapl != null">
+        REG_CAPL = #{record.regCapl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.closeDate != null">
+        CLOSE_DATE = #{record.closeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.closeTime != null">
+        CLOSE_TIME = #{record.closeTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ftAcctId != null">
+        FT_ACCT_ID = #{record.ftAcctId,jdbcType=CHAR},
+      </if>
+      <if test="record.isFtFirst != null">
+        IS_FT_FIRST = #{record.isFtFirst,jdbcType=CHAR},
+      </if>
+      <if test="record.businessStat != null">
+        BUSINESS_STAT = #{record.businessStat,jdbcType=CHAR},
+      </if>
+      <if test="record.riskManagerStat != null">
+        RISK_MANAGER_STAT = #{record.riskManagerStat,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update USR_INFO_SYN
+    set CUST_ID = #{record.custId,jdbcType=CHAR},
+      ACCT_MODE = #{record.acctMode,jdbcType=CHAR},
+      USR_MAIL = #{record.usrMail,jdbcType=VARCHAR},
+      USR_MP = #{record.usrMp,jdbcType=CHAR},
+      USR_NAME = #{record.usrName,jdbcType=VARCHAR},
+      USR_NAME_SHORT = #{record.usrNameShort,jdbcType=VARCHAR},
+      USR_TEL = #{record.usrTel,jdbcType=VARCHAR},
+      USR_STAT = #{record.usrStat,jdbcType=CHAR},
+      USR_TYPE = #{record.usrType,jdbcType=CHAR},
+      CHK_TYPE = #{record.chkType,jdbcType=CHAR},
+      USR_SEX = #{record.usrSex,jdbcType=CHAR},
+      CERT_TYPE = #{record.certType,jdbcType=CHAR},
+      CERT_ID = #{record.certId,jdbcType=VARCHAR},
+      CORP_CODE = #{record.corpCode,jdbcType=VARCHAR},
+      USR_PROV = #{record.usrProv,jdbcType=CHAR},
+      USR_AREA = #{record.usrArea,jdbcType=CHAR},
+      USR_ADDR = #{record.usrAddr,jdbcType=VARCHAR},
+      USR_ZIP = #{record.usrZip,jdbcType=CHAR},
+      OPEN_DATE = #{record.openDate,jdbcType=CHAR},
+      OPEN_TIME = #{record.openTime,jdbcType=CHAR},
+      OPEN_PROV_ID = #{record.openProvId,jdbcType=CHAR},
+      OPEN_AREA_ID = #{record.openAreaId,jdbcType=CHAR},
+      OPEN_BANK_ID = #{record.openBankId,jdbcType=CHAR},
+      OPEN_BRANCH_NAME = #{record.openBranchName,jdbcType=VARCHAR},
+      OPEN_ACCT_NAME = #{record.openAcctName,jdbcType=VARCHAR},
+      OPEN_ACCT_ID = #{record.openAcctId,jdbcType=VARCHAR},
+      BSP_PROV_ID = #{record.bspProvId,jdbcType=CHAR},
+      BSP_AREA_ID = #{record.bspAreaId,jdbcType=CHAR},
+      BSP_BRANCH_NAME = #{record.bspBranchName,jdbcType=VARCHAR},
+      BSP_ACCT_NAME = #{record.bspAcctName,jdbcType=VARCHAR},
+      BSP_ACCT_ID = #{record.bspAcctId,jdbcType=VARCHAR},
+      PWD_CARD_ID = #{record.pwdCardId,jdbcType=CHAR},
+      PAY_FLAG = #{record.payFlag,jdbcType=CHAR},
+      IS_CARD_CASH = #{record.isCardCash,jdbcType=CHAR},
+      IS_CARD_BSP = #{record.isCardBsp,jdbcType=CHAR},
+      IS_CARD_OUT_TRF = #{record.isCardOutTrf,jdbcType=CHAR},
+      CERT_CHK = #{record.certChk,jdbcType=CHAR},
+      CASH_CNT = #{record.cashCnt,jdbcType=DECIMAL},
+      IS_UPD_ACCT = #{record.isUpdAcct,jdbcType=CHAR},
+      IS_UPD_MAG_PWD = #{record.isUpdMagPwd,jdbcType=CHAR},
+      INFO_SOURCE = #{record.infoSource,jdbcType=CHAR},
+      INFO_SOURCE_DESC = #{record.infoSourceDesc,jdbcType=VARCHAR},
+      USER_LEVEL = #{record.userLevel,jdbcType=CHAR},
+      USER_ROLE = #{record.userRole,jdbcType=CHAR},
+      AUTO_PAY_MODE = #{record.autoPayMode,jdbcType=CHAR},
+      IS_PRIVATE_CASH = #{record.isPrivateCash,jdbcType=CHAR},
+      IS_OPEN_RICH_ACCT = #{record.isOpenRichAcct,jdbcType=CHAR},
+      IS_REF_AUTO_TRF = #{record.isRefAutoTrf,jdbcType=CHAR},
+      SALES_BUSDEP_ID = #{record.salesBusdepId,jdbcType=CHAR},
+      PNR_INSTU = #{record.pnrInstu,jdbcType=CHAR},
+      PNR_SALES = #{record.pnrSales,jdbcType=CHAR},
+      TAX_REGIST_CODE = #{record.taxRegistCode,jdbcType=VARCHAR},
+      TTH_MER_ID = #{record.tthMerId,jdbcType=CHAR},
+      CASH_TYPE = #{record.cashType,jdbcType=CHAR},
+      SITE_NAME = #{record.siteName,jdbcType=VARCHAR},
+      BUS_LICE_CODE = #{record.busLiceCode,jdbcType=VARCHAR},
+      IS_BINDING_PAYROLL = #{record.isBindingPayroll,jdbcType=CHAR},
+      PAYROLL_CUST_ID = #{record.payrollCustId,jdbcType=VARCHAR},
+      IS_BINDING_SLB = #{record.isBindingSlb,jdbcType=CHAR},
+      SLB_CUST_ID = #{record.slbCustId,jdbcType=VARCHAR},
+      IS_FRZ_AUTO_TRF = #{record.isFrzAutoTrf,jdbcType=CHAR},
+      IS_FIN_AUTO_BASE = #{record.isFinAutoBase,jdbcType=CHAR},
+      IS_BASE_AUTO_PAY = #{record.isBaseAutoPay,jdbcType=CHAR},
+      USR_FOREIGN_NAME = #{record.usrForeignName,jdbcType=VARCHAR},
+      IS_ACCT_CHECK = #{record.isAcctCheck,jdbcType=CHAR},
+      CUID = #{record.cuid,jdbcType=VARCHAR},
+      IS_TS = #{record.isTs,jdbcType=CHAR},
+      BUSI_SCOPE = #{record.busiScope,jdbcType=VARCHAR},
+      IS_MULT_CERT_FOR_ONE = #{record.isMultCertForOne,jdbcType=CHAR},
+      ID_DATE_BEGIN = #{record.idDateBegin,jdbcType=CHAR},
+      ID_DATE_END = #{record.idDateEnd,jdbcType=CHAR},
+      LEGAL_NAME = #{record.legalName,jdbcType=VARCHAR},
+      LEGAL_ID_TYPE = #{record.legalIdType,jdbcType=CHAR},
+      LEGAL_ID_NO = #{record.legalIdNo,jdbcType=VARCHAR},
+      LEGAL_ID_DATE_BEGIN = #{record.legalIdDateBegin,jdbcType=CHAR},
+      LEGAL_ID_DATE_END = #{record.legalIdDateEnd,jdbcType=CHAR},
+      LEGAL_USR_MP = #{record.legalUsrMp,jdbcType=VARCHAR},
+      CORP_DATE = #{record.corpDate,jdbcType=CHAR},
+      TAX_REG_ID_NUM = #{record.taxRegIdNum,jdbcType=VARCHAR},
+      TAX_REG_ID_DATE = #{record.taxRegIdDate,jdbcType=CHAR},
+      IMAGE_PATH = #{record.imagePath,jdbcType=VARCHAR},
+      IS_AUDIT = #{record.isAudit,jdbcType=CHAR},
+      IS_REAL_NAME_AUTH = #{record.isRealNameAuth,jdbcType=VARCHAR},
+      IS_T0_CASH_FLAG = #{record.isT0CashFlag,jdbcType=VARCHAR},
+      UNI_SOC_CRE_CODE = #{record.uniSocCreCode,jdbcType=VARCHAR},
+      CREATE_DATE = #{record.createDate,jdbcType=CHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=CHAR},
+      UPDATE_DATE = #{record.updateDate,jdbcType=CHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=CHAR},
+      CURRENCY = #{record.currency,jdbcType=VARCHAR},
+      REG_CAPL = #{record.regCapl,jdbcType=VARCHAR},
+      CLOSE_DATE = #{record.closeDate,jdbcType=VARCHAR},
+      CLOSE_TIME = #{record.closeTime,jdbcType=VARCHAR},
+      FT_ACCT_ID = #{record.ftAcctId,jdbcType=CHAR},
+      IS_FT_FIRST = #{record.isFtFirst,jdbcType=CHAR},
+      BUSINESS_STAT = #{record.businessStat,jdbcType=CHAR},
+      RISK_MANAGER_STAT = #{record.riskManagerStat,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

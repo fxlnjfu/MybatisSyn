@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.MerTransInfoMapper">
+  <resultMap id="BaseResultMap" type="mybatis.model.MerTransInfo">
+    <result column="MER_ID" jdbcType="CHAR" property="merId" />
+    <result column="MER_NAME_SHORT" jdbcType="VARCHAR" property="merNameShort" />
+    <result column="TTF_MER_ID" jdbcType="CHAR" property="ttfMerId" />
+    <result column="CUST_ID" jdbcType="CHAR" property="custId" />
+    <result column="LIQ_DRI" jdbcType="CHAR" property="liqDri" />
+    <result column="GET_FEE_TYPE" jdbcType="CHAR" property="getFeeType" />
+    <result column="LAST_FEE_DATE" jdbcType="CHAR" property="lastFeeDate" />
+    <result column="STAT_FLAG" jdbcType="CHAR" property="statFlag" />
+    <result column="LAST_UPD_TIME" jdbcType="CHAR" property="lastUpdTime" />
+    <result column="REF_DIV_AMT" jdbcType="CHAR" property="refDivAmt" />
+    <result column="REFUND_WAIT" jdbcType="CHAR" property="refundWait" />
+    <result column="IS_OPEN_CR" jdbcType="CHAR" property="isOpenCr" />
+    <result column="IS_OPEN_RECV" jdbcType="CHAR" property="isOpenRecv" />
+    <result column="MER_TYPE" jdbcType="CHAR" property="merType" />
+    <result column="LIQ_FLAG" jdbcType="CHAR" property="liqFlag" />
+    <result column="IS_OPEN_DEP" jdbcType="CHAR" property="isOpenDep" />
+    <result column="RECV_ACCT_TYPE" jdbcType="CHAR" property="recvAcctType" />
+    <result column="DEP_SAVE_MER_ID" jdbcType="CHAR" property="depSaveMerId" />
+    <result column="GET_FEE_ASPECT" jdbcType="CHAR" property="getFeeAspect" />
+    <result column="IS_OPEN_BIG_CR" jdbcType="CHAR" property="isOpenBigCr" />
+    <result column="NEW_DIV_TYPE" jdbcType="CHAR" property="newDivType" />
+    <result column="IS_OPEN_SAND_POS" jdbcType="CHAR" property="isOpenSandPos" />
+    <result column="SAND_TTH_MER_ID" jdbcType="CHAR" property="sandTthMerId" />
+    <result column="IS_NOTIFY" jdbcType="CHAR" property="isNotify" />
+    <result column="BG_RET_URL" jdbcType="VARCHAR" property="bgRetUrl" />
+    <result column="IS_OPEN_PNR_POS" jdbcType="CHAR" property="isOpenPnrPos" />
+    <result column="IS_FP_LOGO" jdbcType="CHAR" property="isFpLogo" />
+    <result column="BG_REF_RET_URL" jdbcType="VARCHAR" property="bgRefRetUrl" />
+    <result column="QUERY_RET_URL" jdbcType="VARCHAR" property="queryRetUrl" />
+    <result column="MD5_KEY" jdbcType="VARCHAR" property="md5Key" />
+    <result column="MER_NAME_EN" jdbcType="VARCHAR" property="merNameEn" />
+    <result column="IS_OPEN_FP" jdbcType="CHAR" property="isOpenFp" />
+    <result column="IS_OPEN_DA_TEL" jdbcType="CHAR" property="isOpenDaTel" />
+    <result column="OPEN_TEL_TYPE" jdbcType="VARCHAR" property="openTelType" />
+    <result column="DEP_SAVE_FEE_ASPECT" jdbcType="CHAR" property="depSaveFeeAspect" />
+    <result column="IS_MP_VALID_BIRTH" jdbcType="CHAR" property="isMpValidBirth" />
+    <result column="EPOS_TRANS_LIMIT" jdbcType="DECIMAL" property="eposTransLimit" />
+    <result column="IS_CANCEL_FEE" jdbcType="CHAR" property="isCancelFee" />
+    <result column="IS_PART_FEE" jdbcType="CHAR" property="isPartFee" />
+    <result column="MONTH_TRANS_LIMIT" jdbcType="DECIMAL" property="monthTransLimit" />
+    <result column="OVER_MONTH_LIMIT_RATE" jdbcType="VARCHAR" property="overMonthLimitRate" />
+    <result column="IS_DEBIT_AUTH" jdbcType="CHAR" property="isDebitAuth" />
+    <result column="BASE_CALC_MODE" jdbcType="VARCHAR" property="baseCalcMode" />
+    <result column="IS_ANTI_PHISHING" jdbcType="CHAR" property="isAntiPhishing" />
+    <result column="IS_VERIFY_IP" jdbcType="CHAR" property="isVerifyIp" />
+    <result column="IS_DEBIT_DEDUCT" jdbcType="CHAR" property="isDebitDeduct" />
+    <result column="IS_ACTIVE_CASH" jdbcType="CHAR" property="isActiveCash" />
+    <result column="IS_OWN_CHG_INFO" jdbcType="CHAR" property="isOwnChgInfo" />
+    <result column="IS_POS_REL_ORD" jdbcType="CHAR" property="isPosRelOrd" />
+    <result column="IS_CFC_VALIDATE" jdbcType="CHAR" property="isCfcValidate" />
+    <result column="REL_FEE_USR_ID" jdbcType="VARCHAR" property="relFeeUsrId" />
+    <result column="IS_BIND_MTP_CARD" jdbcType="VARCHAR" property="isBindMtpCard" />
+    <result column="IS_AGREEMENT_FP" jdbcType="CHAR" property="isAgreementFp" />
+    <result column="IS_SPT_CRE_FP" jdbcType="CHAR" property="isSptCreFp" />
+    <result column="IS_SPT_CARD_FP_SIMPLE" jdbcType="CHAR" property="isSptCardFpSimple" />
+    <result column="IS_CLOSE_FOREVER" jdbcType="CHAR" property="isCloseForever" />
+    <result column="IS_BUY_INTERFACE" jdbcType="CHAR" property="isBuyInterface" />
+    <result column="IS_TEL_INTERFACE" jdbcType="CHAR" property="isTelInterface" />
+    <result column="IS_FP_INTERFACE" jdbcType="CHAR" property="isFpInterface" />
+    <result column="MER_CHARSET" jdbcType="VARCHAR" property="merCharset" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    MER_ID, MER_NAME_SHORT, TTF_MER_ID, CUST_ID, LIQ_DRI, GET_FEE_TYPE, LAST_FEE_DATE, 
+    STAT_FLAG, LAST_UPD_TIME, REF_DIV_AMT, REFUND_WAIT, IS_OPEN_CR, IS_OPEN_RECV, MER_TYPE, 
+    LIQ_FLAG, IS_OPEN_DEP, RECV_ACCT_TYPE, DEP_SAVE_MER_ID, GET_FEE_ASPECT, IS_OPEN_BIG_CR, 
+    NEW_DIV_TYPE, IS_OPEN_SAND_POS, SAND_TTH_MER_ID, IS_NOTIFY, BG_RET_URL, IS_OPEN_PNR_POS, 
+    IS_FP_LOGO, BG_REF_RET_URL, QUERY_RET_URL, MD5_KEY, MER_NAME_EN, IS_OPEN_FP, IS_OPEN_DA_TEL, 
+    OPEN_TEL_TYPE, DEP_SAVE_FEE_ASPECT, IS_MP_VALID_BIRTH, EPOS_TRANS_LIMIT, IS_CANCEL_FEE, 
+    IS_PART_FEE, MONTH_TRANS_LIMIT, OVER_MONTH_LIMIT_RATE, IS_DEBIT_AUTH, BASE_CALC_MODE, 
+    IS_ANTI_PHISHING, IS_VERIFY_IP, IS_DEBIT_DEDUCT, IS_ACTIVE_CASH, IS_OWN_CHG_INFO, 
+    IS_POS_REL_ORD, IS_CFC_VALIDATE, REL_FEE_USR_ID, IS_BIND_MTP_CARD, IS_AGREEMENT_FP, 
+    IS_SPT_CRE_FP, IS_SPT_CARD_FP_SIMPLE, IS_CLOSE_FOREVER, IS_BUY_INTERFACE, IS_TEL_INTERFACE, 
+    IS_FP_INTERFACE, MER_CHARSET
+  </sql>
+  <select id="selectByExample" parameterType="mybatis.model.MerTransInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MER_TRANS_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="mybatis.model.MerTransInfoExample">
+    delete from MER_TRANS_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="mybatis.model.MerTransInfo">
+    insert into MER_TRANS_INFO (MER_ID, MER_NAME_SHORT, TTF_MER_ID, 
+      CUST_ID, LIQ_DRI, GET_FEE_TYPE, 
+      LAST_FEE_DATE, STAT_FLAG, LAST_UPD_TIME, 
+      REF_DIV_AMT, REFUND_WAIT, IS_OPEN_CR, 
+      IS_OPEN_RECV, MER_TYPE, LIQ_FLAG, 
+      IS_OPEN_DEP, RECV_ACCT_TYPE, DEP_SAVE_MER_ID, 
+      GET_FEE_ASPECT, IS_OPEN_BIG_CR, NEW_DIV_TYPE, 
+      IS_OPEN_SAND_POS, SAND_TTH_MER_ID, IS_NOTIFY, 
+      BG_RET_URL, IS_OPEN_PNR_POS, IS_FP_LOGO, 
+      BG_REF_RET_URL, QUERY_RET_URL, MD5_KEY, 
+      MER_NAME_EN, IS_OPEN_FP, IS_OPEN_DA_TEL, 
+      OPEN_TEL_TYPE, DEP_SAVE_FEE_ASPECT, IS_MP_VALID_BIRTH, 
+      EPOS_TRANS_LIMIT, IS_CANCEL_FEE, IS_PART_FEE, 
+      MONTH_TRANS_LIMIT, OVER_MONTH_LIMIT_RATE, IS_DEBIT_AUTH, 
+      BASE_CALC_MODE, IS_ANTI_PHISHING, IS_VERIFY_IP, 
+      IS_DEBIT_DEDUCT, IS_ACTIVE_CASH, IS_OWN_CHG_INFO, 
+      IS_POS_REL_ORD, IS_CFC_VALIDATE, REL_FEE_USR_ID, 
+      IS_BIND_MTP_CARD, IS_AGREEMENT_FP, IS_SPT_CRE_FP, 
+      IS_SPT_CARD_FP_SIMPLE, IS_CLOSE_FOREVER, IS_BUY_INTERFACE, 
+      IS_TEL_INTERFACE, IS_FP_INTERFACE, MER_CHARSET
+      )
+    values (#{merId,jdbcType=CHAR}, #{merNameShort,jdbcType=VARCHAR}, #{ttfMerId,jdbcType=CHAR}, 
+      #{custId,jdbcType=CHAR}, #{liqDri,jdbcType=CHAR}, #{getFeeType,jdbcType=CHAR}, 
+      #{lastFeeDate,jdbcType=CHAR}, #{statFlag,jdbcType=CHAR}, #{lastUpdTime,jdbcType=CHAR}, 
+      #{refDivAmt,jdbcType=CHAR}, #{refundWait,jdbcType=CHAR}, #{isOpenCr,jdbcType=CHAR}, 
+      #{isOpenRecv,jdbcType=CHAR}, #{merType,jdbcType=CHAR}, #{liqFlag,jdbcType=CHAR}, 
+      #{isOpenDep,jdbcType=CHAR}, #{recvAcctType,jdbcType=CHAR}, #{depSaveMerId,jdbcType=CHAR}, 
+      #{getFeeAspect,jdbcType=CHAR}, #{isOpenBigCr,jdbcType=CHAR}, #{newDivType,jdbcType=CHAR}, 
+      #{isOpenSandPos,jdbcType=CHAR}, #{sandTthMerId,jdbcType=CHAR}, #{isNotify,jdbcType=CHAR}, 
+      #{bgRetUrl,jdbcType=VARCHAR}, #{isOpenPnrPos,jdbcType=CHAR}, #{isFpLogo,jdbcType=CHAR}, 
+      #{bgRefRetUrl,jdbcType=VARCHAR}, #{queryRetUrl,jdbcType=VARCHAR}, #{md5Key,jdbcType=VARCHAR}, 
+      #{merNameEn,jdbcType=VARCHAR}, #{isOpenFp,jdbcType=CHAR}, #{isOpenDaTel,jdbcType=CHAR}, 
+      #{openTelType,jdbcType=VARCHAR}, #{depSaveFeeAspect,jdbcType=CHAR}, #{isMpValidBirth,jdbcType=CHAR}, 
+      #{eposTransLimit,jdbcType=DECIMAL}, #{isCancelFee,jdbcType=CHAR}, #{isPartFee,jdbcType=CHAR}, 
+      #{monthTransLimit,jdbcType=DECIMAL}, #{overMonthLimitRate,jdbcType=VARCHAR}, #{isDebitAuth,jdbcType=CHAR}, 
+      #{baseCalcMode,jdbcType=VARCHAR}, #{isAntiPhishing,jdbcType=CHAR}, #{isVerifyIp,jdbcType=CHAR}, 
+      #{isDebitDeduct,jdbcType=CHAR}, #{isActiveCash,jdbcType=CHAR}, #{isOwnChgInfo,jdbcType=CHAR}, 
+      #{isPosRelOrd,jdbcType=CHAR}, #{isCfcValidate,jdbcType=CHAR}, #{relFeeUsrId,jdbcType=VARCHAR}, 
+      #{isBindMtpCard,jdbcType=VARCHAR}, #{isAgreementFp,jdbcType=CHAR}, #{isSptCreFp,jdbcType=CHAR}, 
+      #{isSptCardFpSimple,jdbcType=CHAR}, #{isCloseForever,jdbcType=CHAR}, #{isBuyInterface,jdbcType=CHAR}, 
+      #{isTelInterface,jdbcType=CHAR}, #{isFpInterface,jdbcType=CHAR}, #{merCharset,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mybatis.model.MerTransInfo">
+    insert into MER_TRANS_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="merId != null">
+        MER_ID,
+      </if>
+      <if test="merNameShort != null">
+        MER_NAME_SHORT,
+      </if>
+      <if test="ttfMerId != null">
+        TTF_MER_ID,
+      </if>
+      <if test="custId != null">
+        CUST_ID,
+      </if>
+      <if test="liqDri != null">
+        LIQ_DRI,
+      </if>
+      <if test="getFeeType != null">
+        GET_FEE_TYPE,
+      </if>
+      <if test="lastFeeDate != null">
+        LAST_FEE_DATE,
+      </if>
+      <if test="statFlag != null">
+        STAT_FLAG,
+      </if>
+      <if test="lastUpdTime != null">
+        LAST_UPD_TIME,
+      </if>
+      <if test="refDivAmt != null">
+        REF_DIV_AMT,
+      </if>
+      <if test="refundWait != null">
+        REFUND_WAIT,
+      </if>
+      <if test="isOpenCr != null">
+        IS_OPEN_CR,
+      </if>
+      <if test="isOpenRecv != null">
+        IS_OPEN_RECV,
+      </if>
+      <if test="merType != null">
+        MER_TYPE,
+      </if>
+      <if test="liqFlag != null">
+        LIQ_FLAG,
+      </if>
+      <if test="isOpenDep != null">
+        IS_OPEN_DEP,
+      </if>
+      <if test="recvAcctType != null">
+        RECV_ACCT_TYPE,
+      </if>
+      <if test="depSaveMerId != null">
+        DEP_SAVE_MER_ID,
+      </if>
+      <if test="getFeeAspect != null">
+        GET_FEE_ASPECT,
+      </if>
+      <if test="isOpenBigCr != null">
+        IS_OPEN_BIG_CR,
+      </if>
+      <if test="newDivType != null">
+        NEW_DIV_TYPE,
+      </if>
+      <if test="isOpenSandPos != null">
+        IS_OPEN_SAND_POS,
+      </if>
+      <if test="sandTthMerId != null">
+        SAND_TTH_MER_ID,
+      </if>
+      <if test="isNotify != null">
+        IS_NOTIFY,
+      </if>
+      <if test="bgRetUrl != null">
+        BG_RET_URL,
+      </if>
+      <if test="isOpenPnrPos != null">
+        IS_OPEN_PNR_POS,
+      </if>
+      <if test="isFpLogo != null">
+        IS_FP_LOGO,
+      </if>
+      <if test="bgRefRetUrl != null">
+        BG_REF_RET_URL,
+      </if>
+      <if test="queryRetUrl != null">
+        QUERY_RET_URL,
+      </if>
+      <if test="md5Key != null">
+        MD5_KEY,
+      </if>
+      <if test="merNameEn != null">
+        MER_NAME_EN,
+      </if>
+      <if test="isOpenFp != null">
+        IS_OPEN_FP,
+      </if>
+      <if test="isOpenDaTel != null">
+        IS_OPEN_DA_TEL,
+      </if>
+      <if test="openTelType != null">
+        OPEN_TEL_TYPE,
+      </if>
+      <if test="depSaveFeeAspect != null">
+        DEP_SAVE_FEE_ASPECT,
+      </if>
+      <if test="isMpValidBirth != null">
+        IS_MP_VALID_BIRTH,
+      </if>
+      <if test="eposTransLimit != null">
+        EPOS_TRANS_LIMIT,
+      </if>
+      <if test="isCancelFee != null">
+        IS_CANCEL_FEE,
+      </if>
+      <if test="isPartFee != null">
+        IS_PART_FEE,
+      </if>
+      <if test="monthTransLimit != null">
+        MONTH_TRANS_LIMIT,
+      </if>
+      <if test="overMonthLimitRate != null">
+        OVER_MONTH_LIMIT_RATE,
+      </if>
+      <if test="isDebitAuth != null">
+        IS_DEBIT_AUTH,
+      </if>
+      <if test="baseCalcMode != null">
+        BASE_CALC_MODE,
+      </if>
+      <if test="isAntiPhishing != null">
+        IS_ANTI_PHISHING,
+      </if>
+      <if test="isVerifyIp != null">
+        IS_VERIFY_IP,
+      </if>
+      <if test="isDebitDeduct != null">
+        IS_DEBIT_DEDUCT,
+      </if>
+      <if test="isActiveCash != null">
+        IS_ACTIVE_CASH,
+      </if>
+      <if test="isOwnChgInfo != null">
+        IS_OWN_CHG_INFO,
+      </if>
+      <if test="isPosRelOrd != null">
+        IS_POS_REL_ORD,
+      </if>
+      <if test="isCfcValidate != null">
+        IS_CFC_VALIDATE,
+      </if>
+      <if test="relFeeUsrId != null">
+        REL_FEE_USR_ID,
+      </if>
+      <if test="isBindMtpCard != null">
+        IS_BIND_MTP_CARD,
+      </if>
+      <if test="isAgreementFp != null">
+        IS_AGREEMENT_FP,
+      </if>
+      <if test="isSptCreFp != null">
+        IS_SPT_CRE_FP,
+      </if>
+      <if test="isSptCardFpSimple != null">
+        IS_SPT_CARD_FP_SIMPLE,
+      </if>
+      <if test="isCloseForever != null">
+        IS_CLOSE_FOREVER,
+      </if>
+      <if test="isBuyInterface != null">
+        IS_BUY_INTERFACE,
+      </if>
+      <if test="isTelInterface != null">
+        IS_TEL_INTERFACE,
+      </if>
+      <if test="isFpInterface != null">
+        IS_FP_INTERFACE,
+      </if>
+      <if test="merCharset != null">
+        MER_CHARSET,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="merId != null">
+        #{merId,jdbcType=CHAR},
+      </if>
+      <if test="merNameShort != null">
+        #{merNameShort,jdbcType=VARCHAR},
+      </if>
+      <if test="ttfMerId != null">
+        #{ttfMerId,jdbcType=CHAR},
+      </if>
+      <if test="custId != null">
+        #{custId,jdbcType=CHAR},
+      </if>
+      <if test="liqDri != null">
+        #{liqDri,jdbcType=CHAR},
+      </if>
+      <if test="getFeeType != null">
+        #{getFeeType,jdbcType=CHAR},
+      </if>
+      <if test="lastFeeDate != null">
+        #{lastFeeDate,jdbcType=CHAR},
+      </if>
+      <if test="statFlag != null">
+        #{statFlag,jdbcType=CHAR},
+      </if>
+      <if test="lastUpdTime != null">
+        #{lastUpdTime,jdbcType=CHAR},
+      </if>
+      <if test="refDivAmt != null">
+        #{refDivAmt,jdbcType=CHAR},
+      </if>
+      <if test="refundWait != null">
+        #{refundWait,jdbcType=CHAR},
+      </if>
+      <if test="isOpenCr != null">
+        #{isOpenCr,jdbcType=CHAR},
+      </if>
+      <if test="isOpenRecv != null">
+        #{isOpenRecv,jdbcType=CHAR},
+      </if>
+      <if test="merType != null">
+        #{merType,jdbcType=CHAR},
+      </if>
+      <if test="liqFlag != null">
+        #{liqFlag,jdbcType=CHAR},
+      </if>
+      <if test="isOpenDep != null">
+        #{isOpenDep,jdbcType=CHAR},
+      </if>
+      <if test="recvAcctType != null">
+        #{recvAcctType,jdbcType=CHAR},
+      </if>
+      <if test="depSaveMerId != null">
+        #{depSaveMerId,jdbcType=CHAR},
+      </if>
+      <if test="getFeeAspect != null">
+        #{getFeeAspect,jdbcType=CHAR},
+      </if>
+      <if test="isOpenBigCr != null">
+        #{isOpenBigCr,jdbcType=CHAR},
+      </if>
+      <if test="newDivType != null">
+        #{newDivType,jdbcType=CHAR},
+      </if>
+      <if test="isOpenSandPos != null">
+        #{isOpenSandPos,jdbcType=CHAR},
+      </if>
+      <if test="sandTthMerId != null">
+        #{sandTthMerId,jdbcType=CHAR},
+      </if>
+      <if test="isNotify != null">
+        #{isNotify,jdbcType=CHAR},
+      </if>
+      <if test="bgRetUrl != null">
+        #{bgRetUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="isOpenPnrPos != null">
+        #{isOpenPnrPos,jdbcType=CHAR},
+      </if>
+      <if test="isFpLogo != null">
+        #{isFpLogo,jdbcType=CHAR},
+      </if>
+      <if test="bgRefRetUrl != null">
+        #{bgRefRetUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="queryRetUrl != null">
+        #{queryRetUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="md5Key != null">
+        #{md5Key,jdbcType=VARCHAR},
+      </if>
+      <if test="merNameEn != null">
+        #{merNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="isOpenFp != null">
+        #{isOpenFp,jdbcType=CHAR},
+      </if>
+      <if test="isOpenDaTel != null">
+        #{isOpenDaTel,jdbcType=CHAR},
+      </if>
+      <if test="openTelType != null">
+        #{openTelType,jdbcType=VARCHAR},
+      </if>
+      <if test="depSaveFeeAspect != null">
+        #{depSaveFeeAspect,jdbcType=CHAR},
+      </if>
+      <if test="isMpValidBirth != null">
+        #{isMpValidBirth,jdbcType=CHAR},
+      </if>
+      <if test="eposTransLimit != null">
+        #{eposTransLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="isCancelFee != null">
+        #{isCancelFee,jdbcType=CHAR},
+      </if>
+      <if test="isPartFee != null">
+        #{isPartFee,jdbcType=CHAR},
+      </if>
+      <if test="monthTransLimit != null">
+        #{monthTransLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="overMonthLimitRate != null">
+        #{overMonthLimitRate,jdbcType=VARCHAR},
+      </if>
+      <if test="isDebitAuth != null">
+        #{isDebitAuth,jdbcType=CHAR},
+      </if>
+      <if test="baseCalcMode != null">
+        #{baseCalcMode,jdbcType=VARCHAR},
+      </if>
+      <if test="isAntiPhishing != null">
+        #{isAntiPhishing,jdbcType=CHAR},
+      </if>
+      <if test="isVerifyIp != null">
+        #{isVerifyIp,jdbcType=CHAR},
+      </if>
+      <if test="isDebitDeduct != null">
+        #{isDebitDeduct,jdbcType=CHAR},
+      </if>
+      <if test="isActiveCash != null">
+        #{isActiveCash,jdbcType=CHAR},
+      </if>
+      <if test="isOwnChgInfo != null">
+        #{isOwnChgInfo,jdbcType=CHAR},
+      </if>
+      <if test="isPosRelOrd != null">
+        #{isPosRelOrd,jdbcType=CHAR},
+      </if>
+      <if test="isCfcValidate != null">
+        #{isCfcValidate,jdbcType=CHAR},
+      </if>
+      <if test="relFeeUsrId != null">
+        #{relFeeUsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="isBindMtpCard != null">
+        #{isBindMtpCard,jdbcType=VARCHAR},
+      </if>
+      <if test="isAgreementFp != null">
+        #{isAgreementFp,jdbcType=CHAR},
+      </if>
+      <if test="isSptCreFp != null">
+        #{isSptCreFp,jdbcType=CHAR},
+      </if>
+      <if test="isSptCardFpSimple != null">
+        #{isSptCardFpSimple,jdbcType=CHAR},
+      </if>
+      <if test="isCloseForever != null">
+        #{isCloseForever,jdbcType=CHAR},
+      </if>
+      <if test="isBuyInterface != null">
+        #{isBuyInterface,jdbcType=CHAR},
+      </if>
+      <if test="isTelInterface != null">
+        #{isTelInterface,jdbcType=CHAR},
+      </if>
+      <if test="isFpInterface != null">
+        #{isFpInterface,jdbcType=CHAR},
+      </if>
+      <if test="merCharset != null">
+        #{merCharset,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="mybatis.model.MerTransInfoExample" resultType="java.lang.Long">
+    select count(*) from MER_TRANS_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update MER_TRANS_INFO
+    <set>
+      <if test="record.merId != null">
+        MER_ID = #{record.merId,jdbcType=CHAR},
+      </if>
+      <if test="record.merNameShort != null">
+        MER_NAME_SHORT = #{record.merNameShort,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ttfMerId != null">
+        TTF_MER_ID = #{record.ttfMerId,jdbcType=CHAR},
+      </if>
+      <if test="record.custId != null">
+        CUST_ID = #{record.custId,jdbcType=CHAR},
+      </if>
+      <if test="record.liqDri != null">
+        LIQ_DRI = #{record.liqDri,jdbcType=CHAR},
+      </if>
+      <if test="record.getFeeType != null">
+        GET_FEE_TYPE = #{record.getFeeType,jdbcType=CHAR},
+      </if>
+      <if test="record.lastFeeDate != null">
+        LAST_FEE_DATE = #{record.lastFeeDate,jdbcType=CHAR},
+      </if>
+      <if test="record.statFlag != null">
+        STAT_FLAG = #{record.statFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.lastUpdTime != null">
+        LAST_UPD_TIME = #{record.lastUpdTime,jdbcType=CHAR},
+      </if>
+      <if test="record.refDivAmt != null">
+        REF_DIV_AMT = #{record.refDivAmt,jdbcType=CHAR},
+      </if>
+      <if test="record.refundWait != null">
+        REFUND_WAIT = #{record.refundWait,jdbcType=CHAR},
+      </if>
+      <if test="record.isOpenCr != null">
+        IS_OPEN_CR = #{record.isOpenCr,jdbcType=CHAR},
+      </if>
+      <if test="record.isOpenRecv != null">
+        IS_OPEN_RECV = #{record.isOpenRecv,jdbcType=CHAR},
+      </if>
+      <if test="record.merType != null">
+        MER_TYPE = #{record.merType,jdbcType=CHAR},
+      </if>
+      <if test="record.liqFlag != null">
+        LIQ_FLAG = #{record.liqFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.isOpenDep != null">
+        IS_OPEN_DEP = #{record.isOpenDep,jdbcType=CHAR},
+      </if>
+      <if test="record.recvAcctType != null">
+        RECV_ACCT_TYPE = #{record.recvAcctType,jdbcType=CHAR},
+      </if>
+      <if test="record.depSaveMerId != null">
+        DEP_SAVE_MER_ID = #{record.depSaveMerId,jdbcType=CHAR},
+      </if>
+      <if test="record.getFeeAspect != null">
+        GET_FEE_ASPECT = #{record.getFeeAspect,jdbcType=CHAR},
+      </if>
+      <if test="record.isOpenBigCr != null">
+        IS_OPEN_BIG_CR = #{record.isOpenBigCr,jdbcType=CHAR},
+      </if>
+      <if test="record.newDivType != null">
+        NEW_DIV_TYPE = #{record.newDivType,jdbcType=CHAR},
+      </if>
+      <if test="record.isOpenSandPos != null">
+        IS_OPEN_SAND_POS = #{record.isOpenSandPos,jdbcType=CHAR},
+      </if>
+      <if test="record.sandTthMerId != null">
+        SAND_TTH_MER_ID = #{record.sandTthMerId,jdbcType=CHAR},
+      </if>
+      <if test="record.isNotify != null">
+        IS_NOTIFY = #{record.isNotify,jdbcType=CHAR},
+      </if>
+      <if test="record.bgRetUrl != null">
+        BG_RET_URL = #{record.bgRetUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isOpenPnrPos != null">
+        IS_OPEN_PNR_POS = #{record.isOpenPnrPos,jdbcType=CHAR},
+      </if>
+      <if test="record.isFpLogo != null">
+        IS_FP_LOGO = #{record.isFpLogo,jdbcType=CHAR},
+      </if>
+      <if test="record.bgRefRetUrl != null">
+        BG_REF_RET_URL = #{record.bgRefRetUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.queryRetUrl != null">
+        QUERY_RET_URL = #{record.queryRetUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.md5Key != null">
+        MD5_KEY = #{record.md5Key,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merNameEn != null">
+        MER_NAME_EN = #{record.merNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isOpenFp != null">
+        IS_OPEN_FP = #{record.isOpenFp,jdbcType=CHAR},
+      </if>
+      <if test="record.isOpenDaTel != null">
+        IS_OPEN_DA_TEL = #{record.isOpenDaTel,jdbcType=CHAR},
+      </if>
+      <if test="record.openTelType != null">
+        OPEN_TEL_TYPE = #{record.openTelType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.depSaveFeeAspect != null">
+        DEP_SAVE_FEE_ASPECT = #{record.depSaveFeeAspect,jdbcType=CHAR},
+      </if>
+      <if test="record.isMpValidBirth != null">
+        IS_MP_VALID_BIRTH = #{record.isMpValidBirth,jdbcType=CHAR},
+      </if>
+      <if test="record.eposTransLimit != null">
+        EPOS_TRANS_LIMIT = #{record.eposTransLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isCancelFee != null">
+        IS_CANCEL_FEE = #{record.isCancelFee,jdbcType=CHAR},
+      </if>
+      <if test="record.isPartFee != null">
+        IS_PART_FEE = #{record.isPartFee,jdbcType=CHAR},
+      </if>
+      <if test="record.monthTransLimit != null">
+        MONTH_TRANS_LIMIT = #{record.monthTransLimit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.overMonthLimitRate != null">
+        OVER_MONTH_LIMIT_RATE = #{record.overMonthLimitRate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDebitAuth != null">
+        IS_DEBIT_AUTH = #{record.isDebitAuth,jdbcType=CHAR},
+      </if>
+      <if test="record.baseCalcMode != null">
+        BASE_CALC_MODE = #{record.baseCalcMode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAntiPhishing != null">
+        IS_ANTI_PHISHING = #{record.isAntiPhishing,jdbcType=CHAR},
+      </if>
+      <if test="record.isVerifyIp != null">
+        IS_VERIFY_IP = #{record.isVerifyIp,jdbcType=CHAR},
+      </if>
+      <if test="record.isDebitDeduct != null">
+        IS_DEBIT_DEDUCT = #{record.isDebitDeduct,jdbcType=CHAR},
+      </if>
+      <if test="record.isActiveCash != null">
+        IS_ACTIVE_CASH = #{record.isActiveCash,jdbcType=CHAR},
+      </if>
+      <if test="record.isOwnChgInfo != null">
+        IS_OWN_CHG_INFO = #{record.isOwnChgInfo,jdbcType=CHAR},
+      </if>
+      <if test="record.isPosRelOrd != null">
+        IS_POS_REL_ORD = #{record.isPosRelOrd,jdbcType=CHAR},
+      </if>
+      <if test="record.isCfcValidate != null">
+        IS_CFC_VALIDATE = #{record.isCfcValidate,jdbcType=CHAR},
+      </if>
+      <if test="record.relFeeUsrId != null">
+        REL_FEE_USR_ID = #{record.relFeeUsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isBindMtpCard != null">
+        IS_BIND_MTP_CARD = #{record.isBindMtpCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAgreementFp != null">
+        IS_AGREEMENT_FP = #{record.isAgreementFp,jdbcType=CHAR},
+      </if>
+      <if test="record.isSptCreFp != null">
+        IS_SPT_CRE_FP = #{record.isSptCreFp,jdbcType=CHAR},
+      </if>
+      <if test="record.isSptCardFpSimple != null">
+        IS_SPT_CARD_FP_SIMPLE = #{record.isSptCardFpSimple,jdbcType=CHAR},
+      </if>
+      <if test="record.isCloseForever != null">
+        IS_CLOSE_FOREVER = #{record.isCloseForever,jdbcType=CHAR},
+      </if>
+      <if test="record.isBuyInterface != null">
+        IS_BUY_INTERFACE = #{record.isBuyInterface,jdbcType=CHAR},
+      </if>
+      <if test="record.isTelInterface != null">
+        IS_TEL_INTERFACE = #{record.isTelInterface,jdbcType=CHAR},
+      </if>
+      <if test="record.isFpInterface != null">
+        IS_FP_INTERFACE = #{record.isFpInterface,jdbcType=CHAR},
+      </if>
+      <if test="record.merCharset != null">
+        MER_CHARSET = #{record.merCharset,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update MER_TRANS_INFO
+    set MER_ID = #{record.merId,jdbcType=CHAR},
+      MER_NAME_SHORT = #{record.merNameShort,jdbcType=VARCHAR},
+      TTF_MER_ID = #{record.ttfMerId,jdbcType=CHAR},
+      CUST_ID = #{record.custId,jdbcType=CHAR},
+      LIQ_DRI = #{record.liqDri,jdbcType=CHAR},
+      GET_FEE_TYPE = #{record.getFeeType,jdbcType=CHAR},
+      LAST_FEE_DATE = #{record.lastFeeDate,jdbcType=CHAR},
+      STAT_FLAG = #{record.statFlag,jdbcType=CHAR},
+      LAST_UPD_TIME = #{record.lastUpdTime,jdbcType=CHAR},
+      REF_DIV_AMT = #{record.refDivAmt,jdbcType=CHAR},
+      REFUND_WAIT = #{record.refundWait,jdbcType=CHAR},
+      IS_OPEN_CR = #{record.isOpenCr,jdbcType=CHAR},
+      IS_OPEN_RECV = #{record.isOpenRecv,jdbcType=CHAR},
+      MER_TYPE = #{record.merType,jdbcType=CHAR},
+      LIQ_FLAG = #{record.liqFlag,jdbcType=CHAR},
+      IS_OPEN_DEP = #{record.isOpenDep,jdbcType=CHAR},
+      RECV_ACCT_TYPE = #{record.recvAcctType,jdbcType=CHAR},
+      DEP_SAVE_MER_ID = #{record.depSaveMerId,jdbcType=CHAR},
+      GET_FEE_ASPECT = #{record.getFeeAspect,jdbcType=CHAR},
+      IS_OPEN_BIG_CR = #{record.isOpenBigCr,jdbcType=CHAR},
+      NEW_DIV_TYPE = #{record.newDivType,jdbcType=CHAR},
+      IS_OPEN_SAND_POS = #{record.isOpenSandPos,jdbcType=CHAR},
+      SAND_TTH_MER_ID = #{record.sandTthMerId,jdbcType=CHAR},
+      IS_NOTIFY = #{record.isNotify,jdbcType=CHAR},
+      BG_RET_URL = #{record.bgRetUrl,jdbcType=VARCHAR},
+      IS_OPEN_PNR_POS = #{record.isOpenPnrPos,jdbcType=CHAR},
+      IS_FP_LOGO = #{record.isFpLogo,jdbcType=CHAR},
+      BG_REF_RET_URL = #{record.bgRefRetUrl,jdbcType=VARCHAR},
+      QUERY_RET_URL = #{record.queryRetUrl,jdbcType=VARCHAR},
+      MD5_KEY = #{record.md5Key,jdbcType=VARCHAR},
+      MER_NAME_EN = #{record.merNameEn,jdbcType=VARCHAR},
+      IS_OPEN_FP = #{record.isOpenFp,jdbcType=CHAR},
+      IS_OPEN_DA_TEL = #{record.isOpenDaTel,jdbcType=CHAR},
+      OPEN_TEL_TYPE = #{record.openTelType,jdbcType=VARCHAR},
+      DEP_SAVE_FEE_ASPECT = #{record.depSaveFeeAspect,jdbcType=CHAR},
+      IS_MP_VALID_BIRTH = #{record.isMpValidBirth,jdbcType=CHAR},
+      EPOS_TRANS_LIMIT = #{record.eposTransLimit,jdbcType=DECIMAL},
+      IS_CANCEL_FEE = #{record.isCancelFee,jdbcType=CHAR},
+      IS_PART_FEE = #{record.isPartFee,jdbcType=CHAR},
+      MONTH_TRANS_LIMIT = #{record.monthTransLimit,jdbcType=DECIMAL},
+      OVER_MONTH_LIMIT_RATE = #{record.overMonthLimitRate,jdbcType=VARCHAR},
+      IS_DEBIT_AUTH = #{record.isDebitAuth,jdbcType=CHAR},
+      BASE_CALC_MODE = #{record.baseCalcMode,jdbcType=VARCHAR},
+      IS_ANTI_PHISHING = #{record.isAntiPhishing,jdbcType=CHAR},
+      IS_VERIFY_IP = #{record.isVerifyIp,jdbcType=CHAR},
+      IS_DEBIT_DEDUCT = #{record.isDebitDeduct,jdbcType=CHAR},
+      IS_ACTIVE_CASH = #{record.isActiveCash,jdbcType=CHAR},
+      IS_OWN_CHG_INFO = #{record.isOwnChgInfo,jdbcType=CHAR},
+      IS_POS_REL_ORD = #{record.isPosRelOrd,jdbcType=CHAR},
+      IS_CFC_VALIDATE = #{record.isCfcValidate,jdbcType=CHAR},
+      REL_FEE_USR_ID = #{record.relFeeUsrId,jdbcType=VARCHAR},
+      IS_BIND_MTP_CARD = #{record.isBindMtpCard,jdbcType=VARCHAR},
+      IS_AGREEMENT_FP = #{record.isAgreementFp,jdbcType=CHAR},
+      IS_SPT_CRE_FP = #{record.isSptCreFp,jdbcType=CHAR},
+      IS_SPT_CARD_FP_SIMPLE = #{record.isSptCardFpSimple,jdbcType=CHAR},
+      IS_CLOSE_FOREVER = #{record.isCloseForever,jdbcType=CHAR},
+      IS_BUY_INTERFACE = #{record.isBuyInterface,jdbcType=CHAR},
+      IS_TEL_INTERFACE = #{record.isTelInterface,jdbcType=CHAR},
+      IS_FP_INTERFACE = #{record.isFpInterface,jdbcType=CHAR},
+      MER_CHARSET = #{record.merCharset,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>
