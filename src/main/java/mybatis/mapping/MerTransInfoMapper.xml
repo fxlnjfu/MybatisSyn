@@ -61,7 +61,6 @@
     <result column="IS_BUY_INTERFACE" jdbcType="CHAR" property="isBuyInterface" />
     <result column="IS_TEL_INTERFACE" jdbcType="CHAR" property="isTelInterface" />
     <result column="IS_FP_INTERFACE" jdbcType="CHAR" property="isFpInterface" />
-    <result column="MER_CHARSET" jdbcType="VARCHAR" property="merCharset" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -132,7 +131,7 @@
     IS_ANTI_PHISHING, IS_VERIFY_IP, IS_DEBIT_DEDUCT, IS_ACTIVE_CASH, IS_OWN_CHG_INFO, 
     IS_POS_REL_ORD, IS_CFC_VALIDATE, REL_FEE_USR_ID, IS_BIND_MTP_CARD, IS_AGREEMENT_FP, 
     IS_SPT_CRE_FP, IS_SPT_CARD_FP_SIMPLE, IS_CLOSE_FOREVER, IS_BUY_INTERFACE, IS_TEL_INTERFACE, 
-    IS_FP_INTERFACE, MER_CHARSET
+    IS_FP_INTERFACE
   </sql>
   <select id="selectByExample" parameterType="mybatis.model.MerTransInfoExample" resultMap="BaseResultMap">
     select
@@ -140,7 +139,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from MER_TRANS_INFO
+    from GADBUSR.MER_TRANS_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -149,13 +148,13 @@
     </if>
   </select>
   <delete id="deleteByExample" parameterType="mybatis.model.MerTransInfoExample">
-    delete from MER_TRANS_INFO
+    delete from GADBUSR.MER_TRANS_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="mybatis.model.MerTransInfo">
-    insert into MER_TRANS_INFO (MER_ID, MER_NAME_SHORT, TTF_MER_ID, 
+    insert into GADBUSR.MER_TRANS_INFO (MER_ID, MER_NAME_SHORT, TTF_MER_ID, 
       CUST_ID, LIQ_DRI, GET_FEE_TYPE, 
       LAST_FEE_DATE, STAT_FLAG, LAST_UPD_TIME, 
       REF_DIV_AMT, REFUND_WAIT, IS_OPEN_CR, 
@@ -174,8 +173,7 @@
       IS_POS_REL_ORD, IS_CFC_VALIDATE, REL_FEE_USR_ID, 
       IS_BIND_MTP_CARD, IS_AGREEMENT_FP, IS_SPT_CRE_FP, 
       IS_SPT_CARD_FP_SIMPLE, IS_CLOSE_FOREVER, IS_BUY_INTERFACE, 
-      IS_TEL_INTERFACE, IS_FP_INTERFACE, MER_CHARSET
-      )
+      IS_TEL_INTERFACE, IS_FP_INTERFACE)
     values (#{merId,jdbcType=CHAR}, #{merNameShort,jdbcType=VARCHAR}, #{ttfMerId,jdbcType=CHAR}, 
       #{custId,jdbcType=CHAR}, #{liqDri,jdbcType=CHAR}, #{getFeeType,jdbcType=CHAR}, 
       #{lastFeeDate,jdbcType=CHAR}, #{statFlag,jdbcType=CHAR}, #{lastUpdTime,jdbcType=CHAR}, 
@@ -195,11 +193,10 @@
       #{isPosRelOrd,jdbcType=CHAR}, #{isCfcValidate,jdbcType=CHAR}, #{relFeeUsrId,jdbcType=VARCHAR}, 
       #{isBindMtpCard,jdbcType=VARCHAR}, #{isAgreementFp,jdbcType=CHAR}, #{isSptCreFp,jdbcType=CHAR}, 
       #{isSptCardFpSimple,jdbcType=CHAR}, #{isCloseForever,jdbcType=CHAR}, #{isBuyInterface,jdbcType=CHAR}, 
-      #{isTelInterface,jdbcType=CHAR}, #{isFpInterface,jdbcType=CHAR}, #{merCharset,jdbcType=VARCHAR}
-      )
+      #{isTelInterface,jdbcType=CHAR}, #{isFpInterface,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="mybatis.model.MerTransInfo">
-    insert into MER_TRANS_INFO
+    insert into GADBUSR.MER_TRANS_INFO
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="merId != null">
         MER_ID,
@@ -377,9 +374,6 @@
       </if>
       <if test="isFpInterface != null">
         IS_FP_INTERFACE,
-      </if>
-      <if test="merCharset != null">
-        MER_CHARSET,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -560,19 +554,16 @@
       <if test="isFpInterface != null">
         #{isFpInterface,jdbcType=CHAR},
       </if>
-      <if test="merCharset != null">
-        #{merCharset,jdbcType=VARCHAR},
-      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="mybatis.model.MerTransInfoExample" resultType="java.lang.Long">
-    select count(*) from MER_TRANS_INFO
+    select count(*) from GADBUSR.MER_TRANS_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update MER_TRANS_INFO
+    update GADBUSR.MER_TRANS_INFO
     <set>
       <if test="record.merId != null">
         MER_ID = #{record.merId,jdbcType=CHAR},
@@ -751,16 +742,13 @@
       <if test="record.isFpInterface != null">
         IS_FP_INTERFACE = #{record.isFpInterface,jdbcType=CHAR},
       </if>
-      <if test="record.merCharset != null">
-        MER_CHARSET = #{record.merCharset,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update MER_TRANS_INFO
+    update GADBUSR.MER_TRANS_INFO
     set MER_ID = #{record.merId,jdbcType=CHAR},
       MER_NAME_SHORT = #{record.merNameShort,jdbcType=VARCHAR},
       TTF_MER_ID = #{record.ttfMerId,jdbcType=CHAR},
@@ -819,8 +807,7 @@
       IS_CLOSE_FOREVER = #{record.isCloseForever,jdbcType=CHAR},
       IS_BUY_INTERFACE = #{record.isBuyInterface,jdbcType=CHAR},
       IS_TEL_INTERFACE = #{record.isTelInterface,jdbcType=CHAR},
-      IS_FP_INTERFACE = #{record.isFpInterface,jdbcType=CHAR},
-      MER_CHARSET = #{record.merCharset,jdbcType=VARCHAR}
+      IS_FP_INTERFACE = #{record.isFpInterface,jdbcType=CHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

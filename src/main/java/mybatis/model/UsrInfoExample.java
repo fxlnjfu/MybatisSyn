@@ -6883,6 +6883,1126 @@ public class UsrInfoExample {
             addCriterion("RISK_MANAGER_STAT not between", value1, value2, "riskManagerStat");
             return (Criteria) this;
         }
+
+        public Criteria andUsrMailCoverIsNull() {
+            addCriterion("USR_MAIL_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverIsNotNull() {
+            addCriterion("USR_MAIL_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverEqualTo(String value) {
+            addCriterion("USR_MAIL_COVER =", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverNotEqualTo(String value) {
+            addCriterion("USR_MAIL_COVER <>", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverGreaterThan(String value) {
+            addCriterion("USR_MAIL_COVER >", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("USR_MAIL_COVER >=", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverLessThan(String value) {
+            addCriterion("USR_MAIL_COVER <", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverLessThanOrEqualTo(String value) {
+            addCriterion("USR_MAIL_COVER <=", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverLike(String value) {
+            addCriterion("USR_MAIL_COVER like", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverNotLike(String value) {
+            addCriterion("USR_MAIL_COVER not like", value, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverIn(List<String> values) {
+            addCriterion("USR_MAIL_COVER in", values, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverNotIn(List<String> values) {
+            addCriterion("USR_MAIL_COVER not in", values, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverBetween(String value1, String value2) {
+            addCriterion("USR_MAIL_COVER between", value1, value2, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCoverNotBetween(String value1, String value2) {
+            addCriterion("USR_MAIL_COVER not between", value1, value2, "usrMailCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherIsNull() {
+            addCriterion("USR_MAIL_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherIsNotNull() {
+            addCriterion("USR_MAIL_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherEqualTo(String value) {
+            addCriterion("USR_MAIL_CIPHER =", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherNotEqualTo(String value) {
+            addCriterion("USR_MAIL_CIPHER <>", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherGreaterThan(String value) {
+            addCriterion("USR_MAIL_CIPHER >", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("USR_MAIL_CIPHER >=", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherLessThan(String value) {
+            addCriterion("USR_MAIL_CIPHER <", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherLessThanOrEqualTo(String value) {
+            addCriterion("USR_MAIL_CIPHER <=", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherLike(String value) {
+            addCriterion("USR_MAIL_CIPHER like", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherNotLike(String value) {
+            addCriterion("USR_MAIL_CIPHER not like", value, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherIn(List<String> values) {
+            addCriterion("USR_MAIL_CIPHER in", values, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherNotIn(List<String> values) {
+            addCriterion("USR_MAIL_CIPHER not in", values, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherBetween(String value1, String value2) {
+            addCriterion("USR_MAIL_CIPHER between", value1, value2, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMailCipherNotBetween(String value1, String value2) {
+            addCriterion("USR_MAIL_CIPHER not between", value1, value2, "usrMailCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverIsNull() {
+            addCriterion("USR_MP_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverIsNotNull() {
+            addCriterion("USR_MP_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverEqualTo(String value) {
+            addCriterion("USR_MP_COVER =", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverNotEqualTo(String value) {
+            addCriterion("USR_MP_COVER <>", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverGreaterThan(String value) {
+            addCriterion("USR_MP_COVER >", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("USR_MP_COVER >=", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverLessThan(String value) {
+            addCriterion("USR_MP_COVER <", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverLessThanOrEqualTo(String value) {
+            addCriterion("USR_MP_COVER <=", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverLike(String value) {
+            addCriterion("USR_MP_COVER like", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverNotLike(String value) {
+            addCriterion("USR_MP_COVER not like", value, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverIn(List<String> values) {
+            addCriterion("USR_MP_COVER in", values, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverNotIn(List<String> values) {
+            addCriterion("USR_MP_COVER not in", values, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverBetween(String value1, String value2) {
+            addCriterion("USR_MP_COVER between", value1, value2, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCoverNotBetween(String value1, String value2) {
+            addCriterion("USR_MP_COVER not between", value1, value2, "usrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherIsNull() {
+            addCriterion("USR_MP_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherIsNotNull() {
+            addCriterion("USR_MP_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherEqualTo(String value) {
+            addCriterion("USR_MP_CIPHER =", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherNotEqualTo(String value) {
+            addCriterion("USR_MP_CIPHER <>", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherGreaterThan(String value) {
+            addCriterion("USR_MP_CIPHER >", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("USR_MP_CIPHER >=", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherLessThan(String value) {
+            addCriterion("USR_MP_CIPHER <", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherLessThanOrEqualTo(String value) {
+            addCriterion("USR_MP_CIPHER <=", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherLike(String value) {
+            addCriterion("USR_MP_CIPHER like", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherNotLike(String value) {
+            addCriterion("USR_MP_CIPHER not like", value, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherIn(List<String> values) {
+            addCriterion("USR_MP_CIPHER in", values, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherNotIn(List<String> values) {
+            addCriterion("USR_MP_CIPHER not in", values, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherBetween(String value1, String value2) {
+            addCriterion("USR_MP_CIPHER between", value1, value2, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrMpCipherNotBetween(String value1, String value2) {
+            addCriterion("USR_MP_CIPHER not between", value1, value2, "usrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverIsNull() {
+            addCriterion("USR_TEL_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverIsNotNull() {
+            addCriterion("USR_TEL_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverEqualTo(String value) {
+            addCriterion("USR_TEL_COVER =", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverNotEqualTo(String value) {
+            addCriterion("USR_TEL_COVER <>", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverGreaterThan(String value) {
+            addCriterion("USR_TEL_COVER >", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("USR_TEL_COVER >=", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverLessThan(String value) {
+            addCriterion("USR_TEL_COVER <", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverLessThanOrEqualTo(String value) {
+            addCriterion("USR_TEL_COVER <=", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverLike(String value) {
+            addCriterion("USR_TEL_COVER like", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverNotLike(String value) {
+            addCriterion("USR_TEL_COVER not like", value, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverIn(List<String> values) {
+            addCriterion("USR_TEL_COVER in", values, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverNotIn(List<String> values) {
+            addCriterion("USR_TEL_COVER not in", values, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverBetween(String value1, String value2) {
+            addCriterion("USR_TEL_COVER between", value1, value2, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCoverNotBetween(String value1, String value2) {
+            addCriterion("USR_TEL_COVER not between", value1, value2, "usrTelCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherIsNull() {
+            addCriterion("USR_TEL_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherIsNotNull() {
+            addCriterion("USR_TEL_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherEqualTo(String value) {
+            addCriterion("USR_TEL_CIPHER =", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherNotEqualTo(String value) {
+            addCriterion("USR_TEL_CIPHER <>", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherGreaterThan(String value) {
+            addCriterion("USR_TEL_CIPHER >", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("USR_TEL_CIPHER >=", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherLessThan(String value) {
+            addCriterion("USR_TEL_CIPHER <", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherLessThanOrEqualTo(String value) {
+            addCriterion("USR_TEL_CIPHER <=", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherLike(String value) {
+            addCriterion("USR_TEL_CIPHER like", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherNotLike(String value) {
+            addCriterion("USR_TEL_CIPHER not like", value, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherIn(List<String> values) {
+            addCriterion("USR_TEL_CIPHER in", values, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherNotIn(List<String> values) {
+            addCriterion("USR_TEL_CIPHER not in", values, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherBetween(String value1, String value2) {
+            addCriterion("USR_TEL_CIPHER between", value1, value2, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsrTelCipherNotBetween(String value1, String value2) {
+            addCriterion("USR_TEL_CIPHER not between", value1, value2, "usrTelCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverIsNull() {
+            addCriterion("CERT_ID_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverIsNotNull() {
+            addCriterion("CERT_ID_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverEqualTo(String value) {
+            addCriterion("CERT_ID_COVER =", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverNotEqualTo(String value) {
+            addCriterion("CERT_ID_COVER <>", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverGreaterThan(String value) {
+            addCriterion("CERT_ID_COVER >", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("CERT_ID_COVER >=", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverLessThan(String value) {
+            addCriterion("CERT_ID_COVER <", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverLessThanOrEqualTo(String value) {
+            addCriterion("CERT_ID_COVER <=", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverLike(String value) {
+            addCriterion("CERT_ID_COVER like", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverNotLike(String value) {
+            addCriterion("CERT_ID_COVER not like", value, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverIn(List<String> values) {
+            addCriterion("CERT_ID_COVER in", values, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverNotIn(List<String> values) {
+            addCriterion("CERT_ID_COVER not in", values, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverBetween(String value1, String value2) {
+            addCriterion("CERT_ID_COVER between", value1, value2, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCoverNotBetween(String value1, String value2) {
+            addCriterion("CERT_ID_COVER not between", value1, value2, "certIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherIsNull() {
+            addCriterion("CERT_ID_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherIsNotNull() {
+            addCriterion("CERT_ID_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherEqualTo(String value) {
+            addCriterion("CERT_ID_CIPHER =", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherNotEqualTo(String value) {
+            addCriterion("CERT_ID_CIPHER <>", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherGreaterThan(String value) {
+            addCriterion("CERT_ID_CIPHER >", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("CERT_ID_CIPHER >=", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherLessThan(String value) {
+            addCriterion("CERT_ID_CIPHER <", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherLessThanOrEqualTo(String value) {
+            addCriterion("CERT_ID_CIPHER <=", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherLike(String value) {
+            addCriterion("CERT_ID_CIPHER like", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherNotLike(String value) {
+            addCriterion("CERT_ID_CIPHER not like", value, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherIn(List<String> values) {
+            addCriterion("CERT_ID_CIPHER in", values, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherNotIn(List<String> values) {
+            addCriterion("CERT_ID_CIPHER not in", values, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherBetween(String value1, String value2) {
+            addCriterion("CERT_ID_CIPHER between", value1, value2, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andCertIdCipherNotBetween(String value1, String value2) {
+            addCriterion("CERT_ID_CIPHER not between", value1, value2, "certIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverIsNull() {
+            addCriterion("OPEN_ACCT_ID_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverIsNotNull() {
+            addCriterion("OPEN_ACCT_ID_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER =", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverNotEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER <>", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverGreaterThan(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER >", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER >=", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverLessThan(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER <", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverLessThanOrEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER <=", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverLike(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER like", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverNotLike(String value) {
+            addCriterion("OPEN_ACCT_ID_COVER not like", value, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverIn(List<String> values) {
+            addCriterion("OPEN_ACCT_ID_COVER in", values, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverNotIn(List<String> values) {
+            addCriterion("OPEN_ACCT_ID_COVER not in", values, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverBetween(String value1, String value2) {
+            addCriterion("OPEN_ACCT_ID_COVER between", value1, value2, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCoverNotBetween(String value1, String value2) {
+            addCriterion("OPEN_ACCT_ID_COVER not between", value1, value2, "openAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherIsNull() {
+            addCriterion("OPEN_ACCT_ID_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherIsNotNull() {
+            addCriterion("OPEN_ACCT_ID_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER =", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherNotEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER <>", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherGreaterThan(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER >", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER >=", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherLessThan(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER <", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherLessThanOrEqualTo(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER <=", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherLike(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER like", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherNotLike(String value) {
+            addCriterion("OPEN_ACCT_ID_CIPHER not like", value, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherIn(List<String> values) {
+            addCriterion("OPEN_ACCT_ID_CIPHER in", values, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherNotIn(List<String> values) {
+            addCriterion("OPEN_ACCT_ID_CIPHER not in", values, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherBetween(String value1, String value2) {
+            addCriterion("OPEN_ACCT_ID_CIPHER between", value1, value2, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenAcctIdCipherNotBetween(String value1, String value2) {
+            addCriterion("OPEN_ACCT_ID_CIPHER not between", value1, value2, "openAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverIsNull() {
+            addCriterion("BSP_ACCT_ID_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverIsNotNull() {
+            addCriterion("BSP_ACCT_ID_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_COVER =", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverNotEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_COVER <>", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverGreaterThan(String value) {
+            addCriterion("BSP_ACCT_ID_COVER >", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_COVER >=", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverLessThan(String value) {
+            addCriterion("BSP_ACCT_ID_COVER <", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverLessThanOrEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_COVER <=", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverLike(String value) {
+            addCriterion("BSP_ACCT_ID_COVER like", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverNotLike(String value) {
+            addCriterion("BSP_ACCT_ID_COVER not like", value, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverIn(List<String> values) {
+            addCriterion("BSP_ACCT_ID_COVER in", values, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverNotIn(List<String> values) {
+            addCriterion("BSP_ACCT_ID_COVER not in", values, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverBetween(String value1, String value2) {
+            addCriterion("BSP_ACCT_ID_COVER between", value1, value2, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCoverNotBetween(String value1, String value2) {
+            addCriterion("BSP_ACCT_ID_COVER not between", value1, value2, "bspAcctIdCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherIsNull() {
+            addCriterion("BSP_ACCT_ID_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherIsNotNull() {
+            addCriterion("BSP_ACCT_ID_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER =", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherNotEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER <>", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherGreaterThan(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER >", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER >=", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherLessThan(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER <", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherLessThanOrEqualTo(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER <=", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherLike(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER like", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherNotLike(String value) {
+            addCriterion("BSP_ACCT_ID_CIPHER not like", value, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherIn(List<String> values) {
+            addCriterion("BSP_ACCT_ID_CIPHER in", values, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherNotIn(List<String> values) {
+            addCriterion("BSP_ACCT_ID_CIPHER not in", values, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherBetween(String value1, String value2) {
+            addCriterion("BSP_ACCT_ID_CIPHER between", value1, value2, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andBspAcctIdCipherNotBetween(String value1, String value2) {
+            addCriterion("BSP_ACCT_ID_CIPHER not between", value1, value2, "bspAcctIdCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverIsNull() {
+            addCriterion("LEGAL_ID_NO_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverIsNotNull() {
+            addCriterion("LEGAL_ID_NO_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_COVER =", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverNotEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_COVER <>", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverGreaterThan(String value) {
+            addCriterion("LEGAL_ID_NO_COVER >", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_COVER >=", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverLessThan(String value) {
+            addCriterion("LEGAL_ID_NO_COVER <", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverLessThanOrEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_COVER <=", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverLike(String value) {
+            addCriterion("LEGAL_ID_NO_COVER like", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverNotLike(String value) {
+            addCriterion("LEGAL_ID_NO_COVER not like", value, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverIn(List<String> values) {
+            addCriterion("LEGAL_ID_NO_COVER in", values, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverNotIn(List<String> values) {
+            addCriterion("LEGAL_ID_NO_COVER not in", values, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverBetween(String value1, String value2) {
+            addCriterion("LEGAL_ID_NO_COVER between", value1, value2, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCoverNotBetween(String value1, String value2) {
+            addCriterion("LEGAL_ID_NO_COVER not between", value1, value2, "legalIdNoCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherIsNull() {
+            addCriterion("LEGAL_ID_NO_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherIsNotNull() {
+            addCriterion("LEGAL_ID_NO_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER =", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherNotEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER <>", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherGreaterThan(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER >", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER >=", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherLessThan(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER <", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherLessThanOrEqualTo(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER <=", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherLike(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER like", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherNotLike(String value) {
+            addCriterion("LEGAL_ID_NO_CIPHER not like", value, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherIn(List<String> values) {
+            addCriterion("LEGAL_ID_NO_CIPHER in", values, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherNotIn(List<String> values) {
+            addCriterion("LEGAL_ID_NO_CIPHER not in", values, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherBetween(String value1, String value2) {
+            addCriterion("LEGAL_ID_NO_CIPHER between", value1, value2, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalIdNoCipherNotBetween(String value1, String value2) {
+            addCriterion("LEGAL_ID_NO_CIPHER not between", value1, value2, "legalIdNoCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverIsNull() {
+            addCriterion("LEGAL_USR_MP_COVER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverIsNotNull() {
+            addCriterion("LEGAL_USR_MP_COVER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_COVER =", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverNotEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_COVER <>", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverGreaterThan(String value) {
+            addCriterion("LEGAL_USR_MP_COVER >", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverGreaterThanOrEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_COVER >=", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverLessThan(String value) {
+            addCriterion("LEGAL_USR_MP_COVER <", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverLessThanOrEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_COVER <=", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverLike(String value) {
+            addCriterion("LEGAL_USR_MP_COVER like", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverNotLike(String value) {
+            addCriterion("LEGAL_USR_MP_COVER not like", value, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverIn(List<String> values) {
+            addCriterion("LEGAL_USR_MP_COVER in", values, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverNotIn(List<String> values) {
+            addCriterion("LEGAL_USR_MP_COVER not in", values, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverBetween(String value1, String value2) {
+            addCriterion("LEGAL_USR_MP_COVER between", value1, value2, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCoverNotBetween(String value1, String value2) {
+            addCriterion("LEGAL_USR_MP_COVER not between", value1, value2, "legalUsrMpCover");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherIsNull() {
+            addCriterion("LEGAL_USR_MP_CIPHER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherIsNotNull() {
+            addCriterion("LEGAL_USR_MP_CIPHER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER =", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherNotEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER <>", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherGreaterThan(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER >", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherGreaterThanOrEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER >=", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherLessThan(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER <", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherLessThanOrEqualTo(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER <=", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherLike(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER like", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherNotLike(String value) {
+            addCriterion("LEGAL_USR_MP_CIPHER not like", value, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherIn(List<String> values) {
+            addCriterion("LEGAL_USR_MP_CIPHER in", values, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherNotIn(List<String> values) {
+            addCriterion("LEGAL_USR_MP_CIPHER not in", values, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherBetween(String value1, String value2) {
+            addCriterion("LEGAL_USR_MP_CIPHER between", value1, value2, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
+
+        public Criteria andLegalUsrMpCipherNotBetween(String value1, String value2) {
+            addCriterion("LEGAL_USR_MP_CIPHER not between", value1, value2, "legalUsrMpCipher");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

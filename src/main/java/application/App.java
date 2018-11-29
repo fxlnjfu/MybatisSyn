@@ -37,9 +37,35 @@ import mybatis.model.UsrInfoExample;
 import mybatis.model.UsrInfoSyn;
 import mybatis.model.UsrInfoSynExample;
 
+/**
+ * @Description: oracle数据库表同步，两个数据源
+ * @author xiaoliang.fan
+ * @date: 2018年11月29日 上午11:03:47
+ * @version: v1.0.0
+ */
 public class App 
 {
-	private SqlSession session;
+	/**
+	 * 源数据
+	 */
+	private SqlSession sessionSource;
+	/**
+	 * 目标数据
+	 */
+	private SqlSession sessionTarget;
+	
+	/**
+	 * 源数据源
+	 */
+	private final String dataSource = "dataSourceA";
+	/**
+	 * 目标数据源
+	 */
+	private final String dataTarget = "dataSourceB";
+	
+	/**
+	 * 日志
+	 */
 	private Logger logger;
 	
 	public static void main( String[] args ) throws IOException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException
@@ -51,20 +77,36 @@ public class App
 		app.doBiz();
 		
 		app.afterBiz();
+		
     }
 
+	/**   
+	 * @Description: 数据源初始化，日志初始化      
+	 * @author: xiaoliang.fan
+	 * @date: 2018年11月29日 上午11:02:49
+	 */
 	public void initApp() throws IOException {
 		//利用数据库连接池 POOLED 使用默认的连接池参数（active：10，idle：5）
     	String resource = "config/mybatis-configuration.xml";
     	InputStream inputStream = Resources.getResourceAsStream(resource);
-    	SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-		session = sessionFactory.openSession();
+    	SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream, dataSource);
+    	sessionSource = sessionFactory.openSession();
+		
+    	inputStream = Resources.getResourceAsStream(resource);
+		SqlSessionFactory sessionFactory2 = new SqlSessionFactoryBuilder().build(inputStream, dataTarget);
+		sessionTarget = sessionFactory2.openSession();
+		
 		logger = Logger.getLogger(App.class);
 	}
 	
+	/**   
+	 * @Description: 业务处理函数，查询两者表：同步表和字段表      
+	 * @author: xiaoliang.fan
+	 * @date: 2018年11月29日 上午11:03:12
+	 */
 	public void doBiz() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		//查询同步表,查找有效状态为“1”的数据
-		TableSynInfoMapper tableSynInfoMapper = session.getMapper(TableSynInfoMapper.class);
+		TableSynInfoMapper tableSynInfoMapper = sessionTarget.getMapper(TableSynInfoMapper.class);
 		TableSynInfoExample tableSynInfoExample = new TableSynInfoExample();
 		tableSynInfoExample.createCriteria().andTableStatEqualTo("1");
 		List<TableSynInfo> tableSynInfos = tableSynInfoMapper.selectByExample(tableSynInfoExample);
@@ -78,7 +120,7 @@ public class App
 			logger.info("开始同步表：" + tableSynInfo.getTableName());
 			
 			//查询字段表，根据表名，查询所有有效状态为“1”的记录
-			FieldSynInfoMapper fieldSynInfoMapper = session.getMapper(FieldSynInfoMapper.class);
+			FieldSynInfoMapper fieldSynInfoMapper = sessionTarget.getMapper(FieldSynInfoMapper.class);
 			FieldSynInfoExample fieldSynInfoExample = new FieldSynInfoExample();
 			fieldSynInfoExample.createCriteria().andTableStatEqualTo("1").andTableNameEqualTo(tableSynInfo.getTableName());
 			
@@ -102,14 +144,21 @@ public class App
 			}
 		}
 		
-		session.commit();
+		//提交事务
+		sessionSource.commit();
+		sessionTarget.commit();
 		
 		logger.info("同步结束!");
 	}
     
+    /**   
+     * @Description: MerBaseInfo表同步     
+     * @author: xiaoliang.fan
+     * @date: 2018年11月29日 上午11:04:00
+     */
     void doBizMerBaseInfo(FieldSynInfo fieldSynInfo) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-    	//根据商户号到mer_base_info表中去找
-    	MerBaseInfoMapper merBaseInfoMapper = session.getMapper(MerBaseInfoMapper.class);
+    	//根据商户号到mer_base_info表（数据源头）中去找
+    	MerBaseInfoMapper merBaseInfoMapper = sessionSource.getMapper(MerBaseInfoMapper.class);
 		MerBaseInfoExample merBaseInfoExample = new MerBaseInfoExample();
 		
 		String merId = fieldSynInfo.getFieldValue();
@@ -121,8 +170,8 @@ public class App
 			return;
 		}
 		
-		//根据商户号到mer_base_info_syn表中去找
-		MerBaseInfoSynMapper merBaseInfoSynMapper = session.getMapper(MerBaseInfoSynMapper.class);
+		//根据商户号到mer_base_info_syn(数据目标)表中去找
+		MerBaseInfoSynMapper merBaseInfoSynMapper = sessionTarget.getMapper(MerBaseInfoSynMapper.class);
 		MerBaseInfoSynExample merBaseInfoSynExample = new MerBaseInfoSynExample();
 		merBaseInfoSynExample.createCriteria().andMerIdEqualTo(merId);
 		List<MerBaseInfoSyn> merBaseInfoSyns = merBaseInfoSynMapper.selectByExample(merBaseInfoSynExample);
@@ -147,9 +196,14 @@ public class App
 		}
     }
     
+    /**   
+     * @Description:  MerTransInfo表同步     
+     * @author: xiaoliang.fan
+     * @date: 2018年11月29日 上午11:04:34
+     */
     void doBizMerTransInfo(FieldSynInfo fieldSynInfo) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-		//根据商户号到mer_trans_info表中去找
-		MerTransInfoMapper merTransInfoMapper = session.getMapper(MerTransInfoMapper.class);
+		//根据商户号到mer_trans_info表（数据源）中去找
+		MerTransInfoMapper merTransInfoMapper = sessionSource.getMapper(MerTransInfoMapper.class);
 		MerTransInfoExample merTransInfoExample = new MerTransInfoExample();
 		
 		String merId = fieldSynInfo.getFieldValue();
@@ -161,8 +215,8 @@ public class App
 			return;
 		} 
 		
-		//根据商户号到mer_trans_info_syn表中去找
-		MerTransInfoSynMapper merTransInfoSynMapper = session.getMapper(MerTransInfoSynMapper.class);
+		//根据商户号到mer_trans_info_syn(数据目标)表中去找
+		MerTransInfoSynMapper merTransInfoSynMapper = sessionTarget.getMapper(MerTransInfoSynMapper.class);
 		MerTransInfoSynExample merTransInfoSynExample = new MerTransInfoSynExample();
 		merTransInfoSynExample.createCriteria().andMerIdEqualTo(merId);
 		List<MerTransInfoSyn> merTransInfoSyns = merTransInfoSynMapper.selectByExample(merTransInfoSynExample);
@@ -187,10 +241,15 @@ public class App
 		}
     }
     
+    /**   
+     * @Description: UsrInfo表同步      
+     * @author: xiaoliang.fan
+     * @date: 2018年11月29日 上午11:05:22
+     */
     void doBizUsrInfo(FieldSynInfo fieldSynInfo) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-    	//根据客户号到usr_info中去找
+    	//根据客户号到usr_info(数据源)中去找
     	//TODO 根据手机号到usr_info中去找
-		UsrInfoMapper usrInfoMapper = session.getMapper(UsrInfoMapper.class);
+		UsrInfoMapper usrInfoMapper = sessionSource.getMapper(UsrInfoMapper.class);
 		UsrInfoExample usrInfoExample = new UsrInfoExample();
 		
 		String custId = fieldSynInfo.getFieldValue();
@@ -202,8 +261,8 @@ public class App
 			return;
 		}
 		
-		//根据客户号到usr_info_syn表中去找
-		UsrInfoSynMapper usrInfoSynMapper = session.getMapper(UsrInfoSynMapper.class);
+		//根据客户号到usr_info_syn表(数据目标)中去找
+		UsrInfoSynMapper usrInfoSynMapper = sessionTarget.getMapper(UsrInfoSynMapper.class);
 		UsrInfoSynExample usrInfoSynExample = new UsrInfoSynExample();
 		usrInfoSynExample.createCriteria().andCustIdEqualTo(custId);
 		List<UsrInfoSyn> usrInfoSyns = usrInfoSynMapper.selectByExample(usrInfoSynExample);
@@ -228,7 +287,9 @@ public class App
     }
     
     void afterBiz() {
-    	session.close();
+    	//关闭session
+    	sessionSource.close();
+    	sessionTarget.close();
     }
 
 }

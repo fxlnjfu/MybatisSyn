@@ -121,8 +121,6 @@ public class MerTransInfo {
 
     private String isFpInterface;
 
-    private String merCharset;
-
     public String getMerId() {
         return merId;
     }
@@ -593,13 +591,5 @@ public class MerTransInfo {
 
     public void setIsFpInterface(String isFpInterface) {
         this.isFpInterface = isFpInterface;
-    }
-
-    public String getMerCharset() {
-        return merCharset;
-    }
-
-    public void setMerCharset(String merCharset) {
-        this.merCharset = merCharset;
     }
 }

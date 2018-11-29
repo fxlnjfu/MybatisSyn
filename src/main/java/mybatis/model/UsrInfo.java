@@ -195,6 +195,38 @@ public class UsrInfo {
 
     private String riskManagerStat;
 
+    private String usrMailCover;
+
+    private String usrMailCipher;
+
+    private String usrMpCover;
+
+    private String usrMpCipher;
+
+    private String usrTelCover;
+
+    private String usrTelCipher;
+
+    private String certIdCover;
+
+    private String certIdCipher;
+
+    private String openAcctIdCover;
+
+    private String openAcctIdCipher;
+
+    private String bspAcctIdCover;
+
+    private String bspAcctIdCipher;
+
+    private String legalIdNoCover;
+
+    private String legalIdNoCipher;
+
+    private String legalUsrMpCover;
+
+    private String legalUsrMpCipher;
+
     public String getCustId() {
         return custId;
     }
@@ -969,5 +1001,133 @@ public class UsrInfo {
 
     public void setRiskManagerStat(String riskManagerStat) {
         this.riskManagerStat = riskManagerStat;
+    }
+
+    public String getUsrMailCover() {
+        return usrMailCover;
+    }
+
+    public void setUsrMailCover(String usrMailCover) {
+        this.usrMailCover = usrMailCover;
+    }
+
+    public String getUsrMailCipher() {
+        return usrMailCipher;
+    }
+
+    public void setUsrMailCipher(String usrMailCipher) {
+        this.usrMailCipher = usrMailCipher;
+    }
+
+    public String getUsrMpCover() {
+        return usrMpCover;
+    }
+
+    public void setUsrMpCover(String usrMpCover) {
+        this.usrMpCover = usrMpCover;
+    }
+
+    public String getUsrMpCipher() {
+        return usrMpCipher;
+    }
+
+    public void setUsrMpCipher(String usrMpCipher) {
+        this.usrMpCipher = usrMpCipher;
+    }
+
+    public String getUsrTelCover() {
+        return usrTelCover;
+    }
+
+    public void setUsrTelCover(String usrTelCover) {
+        this.usrTelCover = usrTelCover;
+    }
+
+    public String getUsrTelCipher() {
+        return usrTelCipher;
+    }
+
+    public void setUsrTelCipher(String usrTelCipher) {
+        this.usrTelCipher = usrTelCipher;
+    }
+
+    public String getCertIdCover() {
+        return certIdCover;
+    }
+
+    public void setCertIdCover(String certIdCover) {
+        this.certIdCover = certIdCover;
+    }
+
+    public String getCertIdCipher() {
+        return certIdCipher;
+    }
+
+    public void setCertIdCipher(String certIdCipher) {
+        this.certIdCipher = certIdCipher;
+    }
+
+    public String getOpenAcctIdCover() {
+        return openAcctIdCover;
+    }
+
+    public void setOpenAcctIdCover(String openAcctIdCover) {
+        this.openAcctIdCover = openAcctIdCover;
+    }
+
+    public String getOpenAcctIdCipher() {
+        return openAcctIdCipher;
+    }
+
+    public void setOpenAcctIdCipher(String openAcctIdCipher) {
+        this.openAcctIdCipher = openAcctIdCipher;
+    }
+
+    public String getBspAcctIdCover() {
+        return bspAcctIdCover;
+    }
+
+    public void setBspAcctIdCover(String bspAcctIdCover) {
+        this.bspAcctIdCover = bspAcctIdCover;
+    }
+
+    public String getBspAcctIdCipher() {
+        return bspAcctIdCipher;
+    }
+
+    public void setBspAcctIdCipher(String bspAcctIdCipher) {
+        this.bspAcctIdCipher = bspAcctIdCipher;
+    }
+
+    public String getLegalIdNoCover() {
+        return legalIdNoCover;
+    }
+
+    public void setLegalIdNoCover(String legalIdNoCover) {
+        this.legalIdNoCover = legalIdNoCover;
+    }
+
+    public String getLegalIdNoCipher() {
+        return legalIdNoCipher;
+    }
+
+    public void setLegalIdNoCipher(String legalIdNoCipher) {
+        this.legalIdNoCipher = legalIdNoCipher;
+    }
+
+    public String getLegalUsrMpCover() {
+        return legalUsrMpCover;
+    }
+
+    public void setLegalUsrMpCover(String legalUsrMpCover) {
+        this.legalUsrMpCover = legalUsrMpCover;
+    }
+
+    public String getLegalUsrMpCipher() {
+        return legalUsrMpCipher;
+    }
+
+    public void setLegalUsrMpCipher(String legalUsrMpCipher) {
+        this.legalUsrMpCipher = legalUsrMpCipher;
     }
 }

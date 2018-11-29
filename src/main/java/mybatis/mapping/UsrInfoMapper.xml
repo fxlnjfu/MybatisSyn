@@ -99,6 +99,22 @@
     <result column="IS_FT_FIRST" jdbcType="CHAR" property="isFtFirst" />
     <result column="BUSINESS_STAT" jdbcType="CHAR" property="businessStat" />
     <result column="RISK_MANAGER_STAT" jdbcType="CHAR" property="riskManagerStat" />
+    <result column="USR_MAIL_COVER" jdbcType="VARCHAR" property="usrMailCover" />
+    <result column="USR_MAIL_CIPHER" jdbcType="VARCHAR" property="usrMailCipher" />
+    <result column="USR_MP_COVER" jdbcType="VARCHAR" property="usrMpCover" />
+    <result column="USR_MP_CIPHER" jdbcType="VARCHAR" property="usrMpCipher" />
+    <result column="USR_TEL_COVER" jdbcType="VARCHAR" property="usrTelCover" />
+    <result column="USR_TEL_CIPHER" jdbcType="VARCHAR" property="usrTelCipher" />
+    <result column="CERT_ID_COVER" jdbcType="VARCHAR" property="certIdCover" />
+    <result column="CERT_ID_CIPHER" jdbcType="VARCHAR" property="certIdCipher" />
+    <result column="OPEN_ACCT_ID_COVER" jdbcType="VARCHAR" property="openAcctIdCover" />
+    <result column="OPEN_ACCT_ID_CIPHER" jdbcType="VARCHAR" property="openAcctIdCipher" />
+    <result column="BSP_ACCT_ID_COVER" jdbcType="VARCHAR" property="bspAcctIdCover" />
+    <result column="BSP_ACCT_ID_CIPHER" jdbcType="VARCHAR" property="bspAcctIdCipher" />
+    <result column="LEGAL_ID_NO_COVER" jdbcType="VARCHAR" property="legalIdNoCover" />
+    <result column="LEGAL_ID_NO_CIPHER" jdbcType="VARCHAR" property="legalIdNoCipher" />
+    <result column="LEGAL_USR_MP_COVER" jdbcType="VARCHAR" property="legalUsrMpCover" />
+    <result column="LEGAL_USR_MP_CIPHER" jdbcType="VARCHAR" property="legalUsrMpCipher" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -173,7 +189,10 @@
     LEGAL_ID_NO, LEGAL_ID_DATE_BEGIN, LEGAL_ID_DATE_END, LEGAL_USR_MP, CORP_DATE, TAX_REG_ID_NUM, 
     TAX_REG_ID_DATE, IMAGE_PATH, IS_AUDIT, IS_REAL_NAME_AUTH, IS_T0_CASH_FLAG, UNI_SOC_CRE_CODE, 
     CREATE_DATE, CREATE_TIME, UPDATE_DATE, UPDATE_TIME, CURRENCY, REG_CAPL, CLOSE_DATE, 
-    CLOSE_TIME, FT_ACCT_ID, IS_FT_FIRST, BUSINESS_STAT, RISK_MANAGER_STAT
+    CLOSE_TIME, FT_ACCT_ID, IS_FT_FIRST, BUSINESS_STAT, RISK_MANAGER_STAT, USR_MAIL_COVER, 
+    USR_MAIL_CIPHER, USR_MP_COVER, USR_MP_CIPHER, USR_TEL_COVER, USR_TEL_CIPHER, CERT_ID_COVER, 
+    CERT_ID_CIPHER, OPEN_ACCT_ID_COVER, OPEN_ACCT_ID_CIPHER, BSP_ACCT_ID_COVER, BSP_ACCT_ID_CIPHER, 
+    LEGAL_ID_NO_COVER, LEGAL_ID_NO_CIPHER, LEGAL_USR_MP_COVER, LEGAL_USR_MP_CIPHER
   </sql>
   <select id="selectByExample" parameterType="mybatis.model.UsrInfoExample" resultMap="BaseResultMap">
     select
@@ -181,7 +200,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from USR_INFO
+    from GADBUSR.USR_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -190,13 +209,13 @@
     </if>
   </select>
   <delete id="deleteByExample" parameterType="mybatis.model.UsrInfoExample">
-    delete from USR_INFO
+    delete from GADBUSR.USR_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="mybatis.model.UsrInfo">
-    insert into USR_INFO (CUST_ID, ACCT_MODE, USR_MAIL, 
+    insert into GADBUSR.USR_INFO (CUST_ID, ACCT_MODE, USR_MAIL, 
       USR_MP, USR_NAME, USR_NAME_SHORT, 
       USR_TEL, USR_STAT, USR_TYPE, 
       CHK_TYPE, USR_SEX, CERT_TYPE, CERT_ID, 
@@ -227,8 +246,13 @@
       CREATE_DATE, CREATE_TIME, UPDATE_DATE, 
       UPDATE_TIME, CURRENCY, REG_CAPL, 
       CLOSE_DATE, CLOSE_TIME, FT_ACCT_ID, 
-      IS_FT_FIRST, BUSINESS_STAT, RISK_MANAGER_STAT
-      )
+      IS_FT_FIRST, BUSINESS_STAT, RISK_MANAGER_STAT, 
+      USR_MAIL_COVER, USR_MAIL_CIPHER, USR_MP_COVER, 
+      USR_MP_CIPHER, USR_TEL_COVER, USR_TEL_CIPHER, 
+      CERT_ID_COVER, CERT_ID_CIPHER, OPEN_ACCT_ID_COVER, 
+      OPEN_ACCT_ID_CIPHER, BSP_ACCT_ID_COVER, BSP_ACCT_ID_CIPHER, 
+      LEGAL_ID_NO_COVER, LEGAL_ID_NO_CIPHER, LEGAL_USR_MP_COVER, 
+      LEGAL_USR_MP_CIPHER)
     values (#{custId,jdbcType=CHAR}, #{acctMode,jdbcType=CHAR}, #{usrMail,jdbcType=VARCHAR}, 
       #{usrMp,jdbcType=CHAR}, #{usrName,jdbcType=VARCHAR}, #{usrNameShort,jdbcType=VARCHAR}, 
       #{usrTel,jdbcType=VARCHAR}, #{usrStat,jdbcType=CHAR}, #{usrType,jdbcType=CHAR}, 
@@ -260,11 +284,16 @@
       #{createDate,jdbcType=CHAR}, #{createTime,jdbcType=CHAR}, #{updateDate,jdbcType=CHAR}, 
       #{updateTime,jdbcType=CHAR}, #{currency,jdbcType=VARCHAR}, #{regCapl,jdbcType=VARCHAR}, 
       #{closeDate,jdbcType=VARCHAR}, #{closeTime,jdbcType=VARCHAR}, #{ftAcctId,jdbcType=CHAR}, 
-      #{isFtFirst,jdbcType=CHAR}, #{businessStat,jdbcType=CHAR}, #{riskManagerStat,jdbcType=CHAR}
-      )
+      #{isFtFirst,jdbcType=CHAR}, #{businessStat,jdbcType=CHAR}, #{riskManagerStat,jdbcType=CHAR}, 
+      #{usrMailCover,jdbcType=VARCHAR}, #{usrMailCipher,jdbcType=VARCHAR}, #{usrMpCover,jdbcType=VARCHAR}, 
+      #{usrMpCipher,jdbcType=VARCHAR}, #{usrTelCover,jdbcType=VARCHAR}, #{usrTelCipher,jdbcType=VARCHAR}, 
+      #{certIdCover,jdbcType=VARCHAR}, #{certIdCipher,jdbcType=VARCHAR}, #{openAcctIdCover,jdbcType=VARCHAR}, 
+      #{openAcctIdCipher,jdbcType=VARCHAR}, #{bspAcctIdCover,jdbcType=VARCHAR}, #{bspAcctIdCipher,jdbcType=VARCHAR}, 
+      #{legalIdNoCover,jdbcType=VARCHAR}, #{legalIdNoCipher,jdbcType=VARCHAR}, #{legalUsrMpCover,jdbcType=VARCHAR}, 
+      #{legalUsrMpCipher,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="mybatis.model.UsrInfo">
-    insert into USR_INFO
+    insert into GADBUSR.USR_INFO
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="custId != null">
         CUST_ID,
@@ -556,6 +585,54 @@
       </if>
       <if test="riskManagerStat != null">
         RISK_MANAGER_STAT,
+      </if>
+      <if test="usrMailCover != null">
+        USR_MAIL_COVER,
+      </if>
+      <if test="usrMailCipher != null">
+        USR_MAIL_CIPHER,
+      </if>
+      <if test="usrMpCover != null">
+        USR_MP_COVER,
+      </if>
+      <if test="usrMpCipher != null">
+        USR_MP_CIPHER,
+      </if>
+      <if test="usrTelCover != null">
+        USR_TEL_COVER,
+      </if>
+      <if test="usrTelCipher != null">
+        USR_TEL_CIPHER,
+      </if>
+      <if test="certIdCover != null">
+        CERT_ID_COVER,
+      </if>
+      <if test="certIdCipher != null">
+        CERT_ID_CIPHER,
+      </if>
+      <if test="openAcctIdCover != null">
+        OPEN_ACCT_ID_COVER,
+      </if>
+      <if test="openAcctIdCipher != null">
+        OPEN_ACCT_ID_CIPHER,
+      </if>
+      <if test="bspAcctIdCover != null">
+        BSP_ACCT_ID_COVER,
+      </if>
+      <if test="bspAcctIdCipher != null">
+        BSP_ACCT_ID_CIPHER,
+      </if>
+      <if test="legalIdNoCover != null">
+        LEGAL_ID_NO_COVER,
+      </if>
+      <if test="legalIdNoCipher != null">
+        LEGAL_ID_NO_CIPHER,
+      </if>
+      <if test="legalUsrMpCover != null">
+        LEGAL_USR_MP_COVER,
+      </if>
+      <if test="legalUsrMpCipher != null">
+        LEGAL_USR_MP_CIPHER,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -850,16 +927,64 @@
       <if test="riskManagerStat != null">
         #{riskManagerStat,jdbcType=CHAR},
       </if>
+      <if test="usrMailCover != null">
+        #{usrMailCover,jdbcType=VARCHAR},
+      </if>
+      <if test="usrMailCipher != null">
+        #{usrMailCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="usrMpCover != null">
+        #{usrMpCover,jdbcType=VARCHAR},
+      </if>
+      <if test="usrMpCipher != null">
+        #{usrMpCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="usrTelCover != null">
+        #{usrTelCover,jdbcType=VARCHAR},
+      </if>
+      <if test="usrTelCipher != null">
+        #{usrTelCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="certIdCover != null">
+        #{certIdCover,jdbcType=VARCHAR},
+      </if>
+      <if test="certIdCipher != null">
+        #{certIdCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="openAcctIdCover != null">
+        #{openAcctIdCover,jdbcType=VARCHAR},
+      </if>
+      <if test="openAcctIdCipher != null">
+        #{openAcctIdCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="bspAcctIdCover != null">
+        #{bspAcctIdCover,jdbcType=VARCHAR},
+      </if>
+      <if test="bspAcctIdCipher != null">
+        #{bspAcctIdCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="legalIdNoCover != null">
+        #{legalIdNoCover,jdbcType=VARCHAR},
+      </if>
+      <if test="legalIdNoCipher != null">
+        #{legalIdNoCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="legalUsrMpCover != null">
+        #{legalUsrMpCover,jdbcType=VARCHAR},
+      </if>
+      <if test="legalUsrMpCipher != null">
+        #{legalUsrMpCipher,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="mybatis.model.UsrInfoExample" resultType="java.lang.Long">
-    select count(*) from USR_INFO
+    select count(*) from GADBUSR.USR_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update USR_INFO
+    update GADBUSR.USR_INFO
     <set>
       <if test="record.custId != null">
         CUST_ID = #{record.custId,jdbcType=CHAR},
@@ -1152,13 +1277,61 @@
       <if test="record.riskManagerStat != null">
         RISK_MANAGER_STAT = #{record.riskManagerStat,jdbcType=CHAR},
       </if>
+      <if test="record.usrMailCover != null">
+        USR_MAIL_COVER = #{record.usrMailCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrMailCipher != null">
+        USR_MAIL_CIPHER = #{record.usrMailCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrMpCover != null">
+        USR_MP_COVER = #{record.usrMpCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrMpCipher != null">
+        USR_MP_CIPHER = #{record.usrMpCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrTelCover != null">
+        USR_TEL_COVER = #{record.usrTelCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usrTelCipher != null">
+        USR_TEL_CIPHER = #{record.usrTelCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certIdCover != null">
+        CERT_ID_COVER = #{record.certIdCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certIdCipher != null">
+        CERT_ID_CIPHER = #{record.certIdCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openAcctIdCover != null">
+        OPEN_ACCT_ID_COVER = #{record.openAcctIdCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openAcctIdCipher != null">
+        OPEN_ACCT_ID_CIPHER = #{record.openAcctIdCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bspAcctIdCover != null">
+        BSP_ACCT_ID_COVER = #{record.bspAcctIdCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bspAcctIdCipher != null">
+        BSP_ACCT_ID_CIPHER = #{record.bspAcctIdCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalIdNoCover != null">
+        LEGAL_ID_NO_COVER = #{record.legalIdNoCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalIdNoCipher != null">
+        LEGAL_ID_NO_CIPHER = #{record.legalIdNoCipher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalUsrMpCover != null">
+        LEGAL_USR_MP_COVER = #{record.legalUsrMpCover,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalUsrMpCipher != null">
+        LEGAL_USR_MP_CIPHER = #{record.legalUsrMpCipher,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update USR_INFO
+    update GADBUSR.USR_INFO
     set CUST_ID = #{record.custId,jdbcType=CHAR},
       ACCT_MODE = #{record.acctMode,jdbcType=CHAR},
       USR_MAIL = #{record.usrMail,jdbcType=VARCHAR},
@@ -1255,7 +1428,23 @@
       FT_ACCT_ID = #{record.ftAcctId,jdbcType=CHAR},
       IS_FT_FIRST = #{record.isFtFirst,jdbcType=CHAR},
       BUSINESS_STAT = #{record.businessStat,jdbcType=CHAR},
-      RISK_MANAGER_STAT = #{record.riskManagerStat,jdbcType=CHAR}
+      RISK_MANAGER_STAT = #{record.riskManagerStat,jdbcType=CHAR},
+      USR_MAIL_COVER = #{record.usrMailCover,jdbcType=VARCHAR},
+      USR_MAIL_CIPHER = #{record.usrMailCipher,jdbcType=VARCHAR},
+      USR_MP_COVER = #{record.usrMpCover,jdbcType=VARCHAR},
+      USR_MP_CIPHER = #{record.usrMpCipher,jdbcType=VARCHAR},
+      USR_TEL_COVER = #{record.usrTelCover,jdbcType=VARCHAR},
+      USR_TEL_CIPHER = #{record.usrTelCipher,jdbcType=VARCHAR},
+      CERT_ID_COVER = #{record.certIdCover,jdbcType=VARCHAR},
+      CERT_ID_CIPHER = #{record.certIdCipher,jdbcType=VARCHAR},
+      OPEN_ACCT_ID_COVER = #{record.openAcctIdCover,jdbcType=VARCHAR},
+      OPEN_ACCT_ID_CIPHER = #{record.openAcctIdCipher,jdbcType=VARCHAR},
+      BSP_ACCT_ID_COVER = #{record.bspAcctIdCover,jdbcType=VARCHAR},
+      BSP_ACCT_ID_CIPHER = #{record.bspAcctIdCipher,jdbcType=VARCHAR},
+      LEGAL_ID_NO_COVER = #{record.legalIdNoCover,jdbcType=VARCHAR},
+      LEGAL_ID_NO_CIPHER = #{record.legalIdNoCipher,jdbcType=VARCHAR},
+      LEGAL_USR_MP_COVER = #{record.legalUsrMpCover,jdbcType=VARCHAR},
+      LEGAL_USR_MP_CIPHER = #{record.legalUsrMpCipher,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

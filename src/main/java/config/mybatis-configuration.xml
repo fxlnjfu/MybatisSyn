@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
- <environments default="development">
+
+ <environments default="dataSourceA">
  
- <environment id="development">
- 
+  <environment id="dataSourceA">
  	 <!-- mybatis使用jdbc事务管理方式 -->
 	 <transactionManager type="JDBC" />
-	 
+	 <!-- mybatis使用连接池方式来获取连接 --> 
+	 <dataSource type="POOLED">
+		 <property name="driver" value="oracle.jdbc.OracleDriver" />
+		 <property name="url" value="jdbc:oracle:thin:@192.168.4.228:1521:testdb" />
+		 <property name="username" value="gadbusr" />
+		 <property name="password" value="gadbusr" />
+	 </dataSource>
+ </environment>
+ 
+ <environment id="dataSourceB">
+ 	 <!-- mybatis使用jdbc事务管理方式 -->
+	 <transactionManager type="JDBC" />
 	 <!-- mybatis使用连接池方式来获取连接 --> 
 	 <dataSource type="POOLED">
 		 <property name="driver" value="oracle.jdbc.OracleDriver" />
@@ -15,13 +27,11 @@
 		 <property name="username" value="newhl" />
 		 <property name="password" value="newhl" />
 	 </dataSource>
- 
  </environment>
  
  </environments>
  
  <mappers>
-
 	<mapper resource="mybatis/mapping/FieldSynInfoMapper.xml" />
  	<mapper resource="mybatis/mapping/MerBaseInfoMapper.xml" />
  	<mapper resource="mybatis/mapping/MerBaseInfoSynMapper.xml" />
@@ -30,6 +40,6 @@
  	<mapper resource="mybatis/mapping/TableSynInfoMapper.xml" />
  	<mapper resource="mybatis/mapping/UsrInfoMapper.xml" />
  	<mapper resource="mybatis/mapping/UsrInfoSynMapper.xml" />
- 
  </mappers>
+ 
 </configuration>
