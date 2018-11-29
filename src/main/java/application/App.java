@@ -50,6 +50,7 @@ public class App
     	
 		app.doBiz();
 		
+		app.afterBiz();
     }
 
 	public void initApp() throws IOException {
@@ -224,6 +225,10 @@ public class App
 				logger.info("两者相等，无需更新");
 			}
 		}
+    }
+    
+    void afterBiz() {
+    	session.close();
     }
 
 }
