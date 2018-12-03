@@ -13,9 +13,9 @@
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
         <!-- 数据源配置 -->
-        <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.4.228:1521:testdb" userId="gadbusr" password="gadbusr">
+<!--         <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.4.228:1521:testdb" userId="gadbusr" password="gadbusr"> -->
         <!-- 数据目标配置 -->
-<!--         <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.4.228:1521:testdb" userId="newhl" password="newhl"> -->
+        <jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.4.228:1521:testdb" userId="newhl" password="newhl">
         
         </jdbcConnection>
         <javaTypeResolver>
@@ -31,16 +31,24 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="mybatis.mapper" targetProject="dataSyn/src/main/java">
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-<!--         <table tableName="people_for_test" domainObjectName="Person" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> -->
-<!--         <table tableName="mer_base_info" domainObjectName="MerBaseInfo"></table> -->
-<!--         <table tableName="mer_base_info_syn" domainObjectName="MerBaseInfoSyn"></table> -->
-<!-- 		<table tableName="field_syn_info" domainObjectName="FieldSynInfo"></table> -->
-<!-- 		<table tableName="table_syn_info" domainObjectName="TableSynInfo"></table> -->
-		<table tableName="usr_info" domainObjectName="UsrInfo" schema="GADBUSR"></table>
-<!-- 		<table tableName="usr_info_syn" domainObjectName="UsrInfoSyn"></table> -->
+        
+        <table tableName="field_syn_info" domainObjectName="FieldSynInfo" schema="NEWHL"></table>
+		<table tableName="table_syn_info" domainObjectName="TableSynInfo" schema="NEWHL"></table>
+		
+<!--         <table tableName="mer_base_info" domainObjectName="MerBaseInfo" schema="GADBUSR"></table> -->
+        <table tableName="mer_base_info" domainObjectName="MerBaseInfoSyn" schema="NEWHL"></table>
+		
+<!-- 		<table tableName="usr_info" domainObjectName="UsrInfo" schema="GADBUSR"></table> -->
+		<table tableName="usr_info" domainObjectName="UsrInfoSyn" schema="NEWHL"></table>
+		
 <!-- 		<table tableName="mer_trans_info" domainObjectName="MerTransInfo" schema="GADBUSR"></table> -->
-<!-- 		<table tableName="mer_trans_info_syn" domainObjectName="MerTransInfoSyn" schema="NEWHL"></table> -->
-
+		<table tableName="mer_trans_info" domainObjectName="MerTransInfoSyn" schema="NEWHL"></table>
+		
+<!-- 		<table tableName="mer_fee_mode" domainObjectName="MerFeeMode" schema="GADBUSR"></table> -->
+		<table tableName="mer_fee_mode" domainObjectName="MerFeeModeSyn" schema="NEWHL"></table>
+		
+<!-- 		<table tableName="recv_acct_info" domainObjectName="RecvAcctInfo" schema="GADBUSR"></table> -->
+		<table tableName="recv_acct_info" domainObjectName="RecvAcctInfoSyn" schema="NEWHL"></table>
     </context>
     
 </generatorConfiguration>

@@ -181,7 +181,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from USR_INFO_SYN
+    from NEWHL.USR_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -190,13 +190,13 @@
     </if>
   </select>
   <delete id="deleteByExample" parameterType="mybatis.model.UsrInfoSynExample">
-    delete from USR_INFO_SYN
+    delete from NEWHL.USR_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="mybatis.model.UsrInfoSyn">
-    insert into USR_INFO_SYN (CUST_ID, ACCT_MODE, USR_MAIL, 
+    insert into NEWHL.USR_INFO (CUST_ID, ACCT_MODE, USR_MAIL, 
       USR_MP, USR_NAME, USR_NAME_SHORT, 
       USR_TEL, USR_STAT, USR_TYPE, 
       CHK_TYPE, USR_SEX, CERT_TYPE, CERT_ID, 
@@ -264,7 +264,7 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="mybatis.model.UsrInfoSyn">
-    insert into USR_INFO_SYN
+    insert into NEWHL.USR_INFO
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="custId != null">
         CUST_ID,
@@ -853,13 +853,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="mybatis.model.UsrInfoSynExample" resultType="java.lang.Long">
-    select count(*) from USR_INFO_SYN
+    select count(*) from NEWHL.USR_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update USR_INFO_SYN
+    update NEWHL.USR_INFO
     <set>
       <if test="record.custId != null">
         CUST_ID = #{record.custId,jdbcType=CHAR},
@@ -1158,7 +1158,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update USR_INFO_SYN
+    update NEWHL.USR_INFO
     set CUST_ID = #{record.custId,jdbcType=CHAR},
       ACCT_MODE = #{record.acctMode,jdbcType=CHAR},
       USR_MAIL = #{record.usrMail,jdbcType=VARCHAR},

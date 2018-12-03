@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mybatis.mapper.TableSynInfoMapper">
-  <resultMap id="BaseResultMap" type="mybatis.model.TableSynInfo">
-    <id column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
-    <result column="TABLE_STAT" jdbcType="CHAR" property="tableStat" />
+<mapper namespace="mybatis.mapper.MerFeeModeMapper">
+  <resultMap id="BaseResultMap" type="mybatis.model.MerFeeMode">
+    <result column="MER_ID" jdbcType="CHAR" property="merId" />
+    <result column="TRANS_TYPE" jdbcType="CHAR" property="transType" />
+    <result column="CALC_MODE" jdbcType="VARCHAR" property="calcMode" />
+    <result column="CALC_COND" jdbcType="VARCHAR" property="calcCond" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    TABLE_NAME, TABLE_STAT
+    MER_ID, TRANS_TYPE, CALC_MODE, CALC_COND
   </sql>
-  <select id="selectByExample" parameterType="mybatis.model.TableSynInfoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="mybatis.model.MerFeeModeExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from NEWHL.TABLE_SYN_INFO
+    from GADBUSR.MER_FEE_MODE
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -80,59 +82,69 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from NEWHL.TABLE_SYN_INFO
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from NEWHL.TABLE_SYN_INFO
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
-  </delete>
-  <delete id="deleteByExample" parameterType="mybatis.model.TableSynInfoExample">
-    delete from NEWHL.TABLE_SYN_INFO
+  <delete id="deleteByExample" parameterType="mybatis.model.MerFeeModeExample">
+    delete from GADBUSR.MER_FEE_MODE
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="mybatis.model.TableSynInfo">
-    insert into NEWHL.TABLE_SYN_INFO (TABLE_NAME, TABLE_STAT)
-    values (#{tableName,jdbcType=VARCHAR}, #{tableStat,jdbcType=CHAR})
+  <insert id="insert" parameterType="mybatis.model.MerFeeMode">
+    insert into GADBUSR.MER_FEE_MODE (MER_ID, TRANS_TYPE, CALC_MODE, 
+      CALC_COND)
+    values (#{merId,jdbcType=CHAR}, #{transType,jdbcType=CHAR}, #{calcMode,jdbcType=VARCHAR}, 
+      #{calcCond,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="mybatis.model.TableSynInfo">
-    insert into NEWHL.TABLE_SYN_INFO
+  <insert id="insertSelective" parameterType="mybatis.model.MerFeeMode">
+    insert into GADBUSR.MER_FEE_MODE
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="tableName != null">
-        TABLE_NAME,
+      <if test="merId != null">
+        MER_ID,
       </if>
-      <if test="tableStat != null">
-        TABLE_STAT,
+      <if test="transType != null">
+        TRANS_TYPE,
+      </if>
+      <if test="calcMode != null">
+        CALC_MODE,
+      </if>
+      <if test="calcCond != null">
+        CALC_COND,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="tableName != null">
-        #{tableName,jdbcType=VARCHAR},
+      <if test="merId != null">
+        #{merId,jdbcType=CHAR},
       </if>
-      <if test="tableStat != null">
-        #{tableStat,jdbcType=CHAR},
+      <if test="transType != null">
+        #{transType,jdbcType=CHAR},
+      </if>
+      <if test="calcMode != null">
+        #{calcMode,jdbcType=VARCHAR},
+      </if>
+      <if test="calcCond != null">
+        #{calcCond,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="mybatis.model.TableSynInfoExample" resultType="java.lang.Long">
-    select count(*) from NEWHL.TABLE_SYN_INFO
+  <select id="countByExample" parameterType="mybatis.model.MerFeeModeExample" resultType="java.lang.Long">
+    select count(*) from GADBUSR.MER_FEE_MODE
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update NEWHL.TABLE_SYN_INFO
+    update GADBUSR.MER_FEE_MODE
     <set>
-      <if test="record.tableName != null">
-        TABLE_NAME = #{record.tableName,jdbcType=VARCHAR},
+      <if test="record.merId != null">
+        MER_ID = #{record.merId,jdbcType=CHAR},
       </if>
-      <if test="record.tableStat != null">
-        TABLE_STAT = #{record.tableStat,jdbcType=CHAR},
+      <if test="record.transType != null">
+        TRANS_TYPE = #{record.transType,jdbcType=CHAR},
+      </if>
+      <if test="record.calcMode != null">
+        CALC_MODE = #{record.calcMode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.calcCond != null">
+        CALC_COND = #{record.calcCond,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -140,25 +152,13 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update NEWHL.TABLE_SYN_INFO
-    set TABLE_NAME = #{record.tableName,jdbcType=VARCHAR},
-      TABLE_STAT = #{record.tableStat,jdbcType=CHAR}
+    update GADBUSR.MER_FEE_MODE
+    set MER_ID = #{record.merId,jdbcType=CHAR},
+      TRANS_TYPE = #{record.transType,jdbcType=CHAR},
+      CALC_MODE = #{record.calcMode,jdbcType=VARCHAR},
+      CALC_COND = #{record.calcCond,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="mybatis.model.TableSynInfo">
-    update NEWHL.TABLE_SYN_INFO
-    <set>
-      <if test="tableStat != null">
-        TABLE_STAT = #{tableStat,jdbcType=CHAR},
-      </if>
-    </set>
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="mybatis.model.TableSynInfo">
-    update NEWHL.TABLE_SYN_INFO
-    set TABLE_STAT = #{tableStat,jdbcType=CHAR}
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
   </update>
 </mapper>

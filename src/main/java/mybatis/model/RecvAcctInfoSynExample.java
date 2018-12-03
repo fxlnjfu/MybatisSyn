@@ -3,14 +3,14 @@ package mybatis.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FieldSynInfoExample {
+public class RecvAcctInfoSynExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public FieldSynInfoExample() {
+    public RecvAcctInfoSynExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -104,283 +104,283 @@ public class FieldSynInfoExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andTableNameIsNull() {
-            addCriterion("TABLE_NAME is null");
+        public Criteria andCustIdIsNull() {
+            addCriterion("CUST_ID is null");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameIsNotNull() {
-            addCriterion("TABLE_NAME is not null");
+        public Criteria andCustIdIsNotNull() {
+            addCriterion("CUST_ID is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameEqualTo(String value) {
-            addCriterion("TABLE_NAME =", value, "tableName");
+        public Criteria andCustIdEqualTo(String value) {
+            addCriterion("CUST_ID =", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameNotEqualTo(String value) {
-            addCriterion("TABLE_NAME <>", value, "tableName");
+        public Criteria andCustIdNotEqualTo(String value) {
+            addCriterion("CUST_ID <>", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameGreaterThan(String value) {
-            addCriterion("TABLE_NAME >", value, "tableName");
+        public Criteria andCustIdGreaterThan(String value) {
+            addCriterion("CUST_ID >", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameGreaterThanOrEqualTo(String value) {
-            addCriterion("TABLE_NAME >=", value, "tableName");
+        public Criteria andCustIdGreaterThanOrEqualTo(String value) {
+            addCriterion("CUST_ID >=", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameLessThan(String value) {
-            addCriterion("TABLE_NAME <", value, "tableName");
+        public Criteria andCustIdLessThan(String value) {
+            addCriterion("CUST_ID <", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameLessThanOrEqualTo(String value) {
-            addCriterion("TABLE_NAME <=", value, "tableName");
+        public Criteria andCustIdLessThanOrEqualTo(String value) {
+            addCriterion("CUST_ID <=", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameLike(String value) {
-            addCriterion("TABLE_NAME like", value, "tableName");
+        public Criteria andCustIdLike(String value) {
+            addCriterion("CUST_ID like", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameNotLike(String value) {
-            addCriterion("TABLE_NAME not like", value, "tableName");
+        public Criteria andCustIdNotLike(String value) {
+            addCriterion("CUST_ID not like", value, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameIn(List<String> values) {
-            addCriterion("TABLE_NAME in", values, "tableName");
+        public Criteria andCustIdIn(List<String> values) {
+            addCriterion("CUST_ID in", values, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameNotIn(List<String> values) {
-            addCriterion("TABLE_NAME not in", values, "tableName");
+        public Criteria andCustIdNotIn(List<String> values) {
+            addCriterion("CUST_ID not in", values, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameBetween(String value1, String value2) {
-            addCriterion("TABLE_NAME between", value1, value2, "tableName");
+        public Criteria andCustIdBetween(String value1, String value2) {
+            addCriterion("CUST_ID between", value1, value2, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andTableNameNotBetween(String value1, String value2) {
-            addCriterion("TABLE_NAME not between", value1, value2, "tableName");
+        public Criteria andCustIdNotBetween(String value1, String value2) {
+            addCriterion("CUST_ID not between", value1, value2, "custId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameIsNull() {
-            addCriterion("FIELD_NAME is null");
+        public Criteria andMerIdIsNull() {
+            addCriterion("MER_ID is null");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameIsNotNull() {
-            addCriterion("FIELD_NAME is not null");
+        public Criteria andMerIdIsNotNull() {
+            addCriterion("MER_ID is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameEqualTo(String value) {
-            addCriterion("FIELD_NAME =", value, "fieldName");
+        public Criteria andMerIdEqualTo(String value) {
+            addCriterion("MER_ID =", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameNotEqualTo(String value) {
-            addCriterion("FIELD_NAME <>", value, "fieldName");
+        public Criteria andMerIdNotEqualTo(String value) {
+            addCriterion("MER_ID <>", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameGreaterThan(String value) {
-            addCriterion("FIELD_NAME >", value, "fieldName");
+        public Criteria andMerIdGreaterThan(String value) {
+            addCriterion("MER_ID >", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameGreaterThanOrEqualTo(String value) {
-            addCriterion("FIELD_NAME >=", value, "fieldName");
+        public Criteria andMerIdGreaterThanOrEqualTo(String value) {
+            addCriterion("MER_ID >=", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameLessThan(String value) {
-            addCriterion("FIELD_NAME <", value, "fieldName");
+        public Criteria andMerIdLessThan(String value) {
+            addCriterion("MER_ID <", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameLessThanOrEqualTo(String value) {
-            addCriterion("FIELD_NAME <=", value, "fieldName");
+        public Criteria andMerIdLessThanOrEqualTo(String value) {
+            addCriterion("MER_ID <=", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameLike(String value) {
-            addCriterion("FIELD_NAME like", value, "fieldName");
+        public Criteria andMerIdLike(String value) {
+            addCriterion("MER_ID like", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameNotLike(String value) {
-            addCriterion("FIELD_NAME not like", value, "fieldName");
+        public Criteria andMerIdNotLike(String value) {
+            addCriterion("MER_ID not like", value, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameIn(List<String> values) {
-            addCriterion("FIELD_NAME in", values, "fieldName");
+        public Criteria andMerIdIn(List<String> values) {
+            addCriterion("MER_ID in", values, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameNotIn(List<String> values) {
-            addCriterion("FIELD_NAME not in", values, "fieldName");
+        public Criteria andMerIdNotIn(List<String> values) {
+            addCriterion("MER_ID not in", values, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameBetween(String value1, String value2) {
-            addCriterion("FIELD_NAME between", value1, value2, "fieldName");
+        public Criteria andMerIdBetween(String value1, String value2) {
+            addCriterion("MER_ID between", value1, value2, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldNameNotBetween(String value1, String value2) {
-            addCriterion("FIELD_NAME not between", value1, value2, "fieldName");
+        public Criteria andMerIdNotBetween(String value1, String value2) {
+            addCriterion("MER_ID not between", value1, value2, "merId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueIsNull() {
-            addCriterion("FIELD_VALUE is null");
+        public Criteria andMerUsrIdIsNull() {
+            addCriterion("MER_USR_ID is null");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueIsNotNull() {
-            addCriterion("FIELD_VALUE is not null");
+        public Criteria andMerUsrIdIsNotNull() {
+            addCriterion("MER_USR_ID is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueEqualTo(String value) {
-            addCriterion("FIELD_VALUE =", value, "fieldValue");
+        public Criteria andMerUsrIdEqualTo(String value) {
+            addCriterion("MER_USR_ID =", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueNotEqualTo(String value) {
-            addCriterion("FIELD_VALUE <>", value, "fieldValue");
+        public Criteria andMerUsrIdNotEqualTo(String value) {
+            addCriterion("MER_USR_ID <>", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueGreaterThan(String value) {
-            addCriterion("FIELD_VALUE >", value, "fieldValue");
+        public Criteria andMerUsrIdGreaterThan(String value) {
+            addCriterion("MER_USR_ID >", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueGreaterThanOrEqualTo(String value) {
-            addCriterion("FIELD_VALUE >=", value, "fieldValue");
+        public Criteria andMerUsrIdGreaterThanOrEqualTo(String value) {
+            addCriterion("MER_USR_ID >=", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueLessThan(String value) {
-            addCriterion("FIELD_VALUE <", value, "fieldValue");
+        public Criteria andMerUsrIdLessThan(String value) {
+            addCriterion("MER_USR_ID <", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueLessThanOrEqualTo(String value) {
-            addCriterion("FIELD_VALUE <=", value, "fieldValue");
+        public Criteria andMerUsrIdLessThanOrEqualTo(String value) {
+            addCriterion("MER_USR_ID <=", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueLike(String value) {
-            addCriterion("FIELD_VALUE like", value, "fieldValue");
+        public Criteria andMerUsrIdLike(String value) {
+            addCriterion("MER_USR_ID like", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueNotLike(String value) {
-            addCriterion("FIELD_VALUE not like", value, "fieldValue");
+        public Criteria andMerUsrIdNotLike(String value) {
+            addCriterion("MER_USR_ID not like", value, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueIn(List<String> values) {
-            addCriterion("FIELD_VALUE in", values, "fieldValue");
+        public Criteria andMerUsrIdIn(List<String> values) {
+            addCriterion("MER_USR_ID in", values, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueNotIn(List<String> values) {
-            addCriterion("FIELD_VALUE not in", values, "fieldValue");
+        public Criteria andMerUsrIdNotIn(List<String> values) {
+            addCriterion("MER_USR_ID not in", values, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueBetween(String value1, String value2) {
-            addCriterion("FIELD_VALUE between", value1, value2, "fieldValue");
+        public Criteria andMerUsrIdBetween(String value1, String value2) {
+            addCriterion("MER_USR_ID between", value1, value2, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andFieldValueNotBetween(String value1, String value2) {
-            addCriterion("FIELD_VALUE not between", value1, value2, "fieldValue");
+        public Criteria andMerUsrIdNotBetween(String value1, String value2) {
+            addCriterion("MER_USR_ID not between", value1, value2, "merUsrId");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatIsNull() {
-            addCriterion("TABLE_STAT is null");
+        public Criteria andAcctStatusIsNull() {
+            addCriterion("ACCT_STATUS is null");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatIsNotNull() {
-            addCriterion("TABLE_STAT is not null");
+        public Criteria andAcctStatusIsNotNull() {
+            addCriterion("ACCT_STATUS is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatEqualTo(String value) {
-            addCriterion("TABLE_STAT =", value, "tableStat");
+        public Criteria andAcctStatusEqualTo(String value) {
+            addCriterion("ACCT_STATUS =", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatNotEqualTo(String value) {
-            addCriterion("TABLE_STAT <>", value, "tableStat");
+        public Criteria andAcctStatusNotEqualTo(String value) {
+            addCriterion("ACCT_STATUS <>", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatGreaterThan(String value) {
-            addCriterion("TABLE_STAT >", value, "tableStat");
+        public Criteria andAcctStatusGreaterThan(String value) {
+            addCriterion("ACCT_STATUS >", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatGreaterThanOrEqualTo(String value) {
-            addCriterion("TABLE_STAT >=", value, "tableStat");
+        public Criteria andAcctStatusGreaterThanOrEqualTo(String value) {
+            addCriterion("ACCT_STATUS >=", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatLessThan(String value) {
-            addCriterion("TABLE_STAT <", value, "tableStat");
+        public Criteria andAcctStatusLessThan(String value) {
+            addCriterion("ACCT_STATUS <", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatLessThanOrEqualTo(String value) {
-            addCriterion("TABLE_STAT <=", value, "tableStat");
+        public Criteria andAcctStatusLessThanOrEqualTo(String value) {
+            addCriterion("ACCT_STATUS <=", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatLike(String value) {
-            addCriterion("TABLE_STAT like", value, "tableStat");
+        public Criteria andAcctStatusLike(String value) {
+            addCriterion("ACCT_STATUS like", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatNotLike(String value) {
-            addCriterion("TABLE_STAT not like", value, "tableStat");
+        public Criteria andAcctStatusNotLike(String value) {
+            addCriterion("ACCT_STATUS not like", value, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatIn(List<String> values) {
-            addCriterion("TABLE_STAT in", values, "tableStat");
+        public Criteria andAcctStatusIn(List<String> values) {
+            addCriterion("ACCT_STATUS in", values, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatNotIn(List<String> values) {
-            addCriterion("TABLE_STAT not in", values, "tableStat");
+        public Criteria andAcctStatusNotIn(List<String> values) {
+            addCriterion("ACCT_STATUS not in", values, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatBetween(String value1, String value2) {
-            addCriterion("TABLE_STAT between", value1, value2, "tableStat");
+        public Criteria andAcctStatusBetween(String value1, String value2) {
+            addCriterion("ACCT_STATUS between", value1, value2, "acctStatus");
             return (Criteria) this;
         }
 
-        public Criteria andTableStatNotBetween(String value1, String value2) {
-            addCriterion("TABLE_STAT not between", value1, value2, "tableStat");
+        public Criteria andAcctStatusNotBetween(String value1, String value2) {
+            addCriterion("ACCT_STATUS not between", value1, value2, "acctStatus");
             return (Criteria) this;
         }
     }

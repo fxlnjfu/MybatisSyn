@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mybatis.mapper.TableSynInfoMapper">
-  <resultMap id="BaseResultMap" type="mybatis.model.TableSynInfo">
-    <id column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
-    <result column="TABLE_STAT" jdbcType="CHAR" property="tableStat" />
+<mapper namespace="mybatis.mapper.RecvAcctInfoSynMapper">
+  <resultMap id="BaseResultMap" type="mybatis.model.RecvAcctInfoSyn">
+    <result column="CUST_ID" jdbcType="CHAR" property="custId" />
+    <result column="MER_ID" jdbcType="CHAR" property="merId" />
+    <result column="MER_USR_ID" jdbcType="VARCHAR" property="merUsrId" />
+    <result column="ACCT_STATUS" jdbcType="CHAR" property="acctStatus" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    TABLE_NAME, TABLE_STAT
+    CUST_ID, MER_ID, MER_USR_ID, ACCT_STATUS
   </sql>
-  <select id="selectByExample" parameterType="mybatis.model.TableSynInfoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="mybatis.model.RecvAcctInfoSynExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from NEWHL.TABLE_SYN_INFO
+    from NEWHL.RECV_ACCT_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -80,59 +82,69 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from NEWHL.TABLE_SYN_INFO
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from NEWHL.TABLE_SYN_INFO
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
-  </delete>
-  <delete id="deleteByExample" parameterType="mybatis.model.TableSynInfoExample">
-    delete from NEWHL.TABLE_SYN_INFO
+  <delete id="deleteByExample" parameterType="mybatis.model.RecvAcctInfoSynExample">
+    delete from NEWHL.RECV_ACCT_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="mybatis.model.TableSynInfo">
-    insert into NEWHL.TABLE_SYN_INFO (TABLE_NAME, TABLE_STAT)
-    values (#{tableName,jdbcType=VARCHAR}, #{tableStat,jdbcType=CHAR})
+  <insert id="insert" parameterType="mybatis.model.RecvAcctInfoSyn">
+    insert into NEWHL.RECV_ACCT_INFO (CUST_ID, MER_ID, MER_USR_ID, 
+      ACCT_STATUS)
+    values (#{custId,jdbcType=CHAR}, #{merId,jdbcType=CHAR}, #{merUsrId,jdbcType=VARCHAR}, 
+      #{acctStatus,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="mybatis.model.TableSynInfo">
-    insert into NEWHL.TABLE_SYN_INFO
+  <insert id="insertSelective" parameterType="mybatis.model.RecvAcctInfoSyn">
+    insert into NEWHL.RECV_ACCT_INFO
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="tableName != null">
-        TABLE_NAME,
+      <if test="custId != null">
+        CUST_ID,
       </if>
-      <if test="tableStat != null">
-        TABLE_STAT,
+      <if test="merId != null">
+        MER_ID,
+      </if>
+      <if test="merUsrId != null">
+        MER_USR_ID,
+      </if>
+      <if test="acctStatus != null">
+        ACCT_STATUS,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="tableName != null">
-        #{tableName,jdbcType=VARCHAR},
+      <if test="custId != null">
+        #{custId,jdbcType=CHAR},
       </if>
-      <if test="tableStat != null">
-        #{tableStat,jdbcType=CHAR},
+      <if test="merId != null">
+        #{merId,jdbcType=CHAR},
+      </if>
+      <if test="merUsrId != null">
+        #{merUsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="acctStatus != null">
+        #{acctStatus,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="mybatis.model.TableSynInfoExample" resultType="java.lang.Long">
-    select count(*) from NEWHL.TABLE_SYN_INFO
+  <select id="countByExample" parameterType="mybatis.model.RecvAcctInfoSynExample" resultType="java.lang.Long">
+    select count(*) from NEWHL.RECV_ACCT_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update NEWHL.TABLE_SYN_INFO
+    update NEWHL.RECV_ACCT_INFO
     <set>
-      <if test="record.tableName != null">
-        TABLE_NAME = #{record.tableName,jdbcType=VARCHAR},
+      <if test="record.custId != null">
+        CUST_ID = #{record.custId,jdbcType=CHAR},
       </if>
-      <if test="record.tableStat != null">
-        TABLE_STAT = #{record.tableStat,jdbcType=CHAR},
+      <if test="record.merId != null">
+        MER_ID = #{record.merId,jdbcType=CHAR},
+      </if>
+      <if test="record.merUsrId != null">
+        MER_USR_ID = #{record.merUsrId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acctStatus != null">
+        ACCT_STATUS = #{record.acctStatus,jdbcType=CHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -140,25 +152,13 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update NEWHL.TABLE_SYN_INFO
-    set TABLE_NAME = #{record.tableName,jdbcType=VARCHAR},
-      TABLE_STAT = #{record.tableStat,jdbcType=CHAR}
+    update NEWHL.RECV_ACCT_INFO
+    set CUST_ID = #{record.custId,jdbcType=CHAR},
+      MER_ID = #{record.merId,jdbcType=CHAR},
+      MER_USR_ID = #{record.merUsrId,jdbcType=VARCHAR},
+      ACCT_STATUS = #{record.acctStatus,jdbcType=CHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="mybatis.model.TableSynInfo">
-    update NEWHL.TABLE_SYN_INFO
-    <set>
-      <if test="tableStat != null">
-        TABLE_STAT = #{tableStat,jdbcType=CHAR},
-      </if>
-    </set>
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="mybatis.model.TableSynInfo">
-    update NEWHL.TABLE_SYN_INFO
-    set TABLE_STAT = #{tableStat,jdbcType=CHAR}
-    where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
   </update>
 </mapper>

@@ -140,7 +140,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from NEWHL.MER_TRANS_INFO_SYN
+    from NEWHL.MER_TRANS_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -149,13 +149,13 @@
     </if>
   </select>
   <delete id="deleteByExample" parameterType="mybatis.model.MerTransInfoSynExample">
-    delete from NEWHL.MER_TRANS_INFO_SYN
+    delete from NEWHL.MER_TRANS_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="mybatis.model.MerTransInfoSyn">
-    insert into NEWHL.MER_TRANS_INFO_SYN (MER_ID, MER_NAME_SHORT, TTF_MER_ID, 
+    insert into NEWHL.MER_TRANS_INFO (MER_ID, MER_NAME_SHORT, TTF_MER_ID, 
       CUST_ID, LIQ_DRI, GET_FEE_TYPE, 
       LAST_FEE_DATE, STAT_FLAG, LAST_UPD_TIME, 
       REF_DIV_AMT, REFUND_WAIT, IS_OPEN_CR, 
@@ -199,7 +199,7 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="mybatis.model.MerTransInfoSyn">
-    insert into NEWHL.MER_TRANS_INFO_SYN
+    insert into NEWHL.MER_TRANS_INFO
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="merId != null">
         MER_ID,
@@ -566,13 +566,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="mybatis.model.MerTransInfoSynExample" resultType="java.lang.Long">
-    select count(*) from NEWHL.MER_TRANS_INFO_SYN
+    select count(*) from NEWHL.MER_TRANS_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update NEWHL.MER_TRANS_INFO_SYN
+    update NEWHL.MER_TRANS_INFO
     <set>
       <if test="record.merId != null">
         MER_ID = #{record.merId,jdbcType=CHAR},
@@ -760,7 +760,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update NEWHL.MER_TRANS_INFO_SYN
+    update NEWHL.MER_TRANS_INFO
     set MER_ID = #{record.merId,jdbcType=CHAR},
       MER_NAME_SHORT = #{record.merNameShort,jdbcType=VARCHAR},
       TTF_MER_ID = #{record.ttfMerId,jdbcType=CHAR},

@@ -33,11 +33,21 @@
  
  <mappers>
 	<mapper resource="mybatis/mapping/FieldSynInfoMapper.xml" />
+	
  	<mapper resource="mybatis/mapping/MerBaseInfoMapper.xml" />
  	<mapper resource="mybatis/mapping/MerBaseInfoSynMapper.xml" />
+ 	
+ 	<mapper resource="mybatis/mapping/MerFeeModeMapper.xml" />
+ 	<mapper resource="mybatis/mapping/MerFeeModeSynMapper.xml" />
+ 	
  	<mapper resource="mybatis/mapping/MerTransInfoMapper.xml" />
  	<mapper resource="mybatis/mapping/MerTransInfoSynMapper.xml" />
+ 	
+ 	<mapper resource="mybatis/mapping/RecvAcctInfoMapper.xml" />
+ 	<mapper resource="mybatis/mapping/RecvAcctInfoSynMapper.xml" />
+ 	
  	<mapper resource="mybatis/mapping/TableSynInfoMapper.xml" />
+ 	
  	<mapper resource="mybatis/mapping/UsrInfoMapper.xml" />
  	<mapper resource="mybatis/mapping/UsrInfoSynMapper.xml" />
  </mappers>

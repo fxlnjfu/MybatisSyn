@@ -74,7 +74,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from FIELD_SYN_INFO
+    from NEWHL.FIELD_SYN_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,31 +85,31 @@
   <select id="selectByPrimaryKey" parameterType="mybatis.model.FieldSynInfoKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from FIELD_SYN_INFO
+    from NEWHL.FIELD_SYN_INFO
     where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
       and FIELD_NAME = #{fieldName,jdbcType=VARCHAR}
       and FIELD_VALUE = #{fieldValue,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="mybatis.model.FieldSynInfoKey">
-    delete from FIELD_SYN_INFO
+    delete from NEWHL.FIELD_SYN_INFO
     where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
       and FIELD_NAME = #{fieldName,jdbcType=VARCHAR}
       and FIELD_VALUE = #{fieldValue,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="mybatis.model.FieldSynInfoExample">
-    delete from FIELD_SYN_INFO
+    delete from NEWHL.FIELD_SYN_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="mybatis.model.FieldSynInfo">
-    insert into FIELD_SYN_INFO (TABLE_NAME, FIELD_NAME, FIELD_VALUE, 
+    insert into NEWHL.FIELD_SYN_INFO (TABLE_NAME, FIELD_NAME, FIELD_VALUE, 
       TABLE_STAT)
     values (#{tableName,jdbcType=VARCHAR}, #{fieldName,jdbcType=VARCHAR}, #{fieldValue,jdbcType=VARCHAR}, 
       #{tableStat,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="mybatis.model.FieldSynInfo">
-    insert into FIELD_SYN_INFO
+    insert into NEWHL.FIELD_SYN_INFO
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="tableName != null">
         TABLE_NAME,
@@ -140,13 +140,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="mybatis.model.FieldSynInfoExample" resultType="java.lang.Long">
-    select count(*) from FIELD_SYN_INFO
+    select count(*) from NEWHL.FIELD_SYN_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update FIELD_SYN_INFO
+    update NEWHL.FIELD_SYN_INFO
     <set>
       <if test="record.tableName != null">
         TABLE_NAME = #{record.tableName,jdbcType=VARCHAR},
@@ -166,7 +166,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update FIELD_SYN_INFO
+    update NEWHL.FIELD_SYN_INFO
     set TABLE_NAME = #{record.tableName,jdbcType=VARCHAR},
       FIELD_NAME = #{record.fieldName,jdbcType=VARCHAR},
       FIELD_VALUE = #{record.fieldValue,jdbcType=VARCHAR},
@@ -176,7 +176,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="mybatis.model.FieldSynInfo">
-    update FIELD_SYN_INFO
+    update NEWHL.FIELD_SYN_INFO
     <set>
       <if test="tableStat != null">
         TABLE_STAT = #{tableStat,jdbcType=CHAR},
@@ -187,7 +187,7 @@
       and FIELD_VALUE = #{fieldValue,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="mybatis.model.FieldSynInfo">
-    update FIELD_SYN_INFO
+    update NEWHL.FIELD_SYN_INFO
     set TABLE_STAT = #{tableStat,jdbcType=CHAR}
     where TABLE_NAME = #{tableName,jdbcType=VARCHAR}
       and FIELD_NAME = #{fieldName,jdbcType=VARCHAR}

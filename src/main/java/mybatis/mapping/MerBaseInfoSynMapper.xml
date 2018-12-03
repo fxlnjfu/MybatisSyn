@@ -110,7 +110,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from MER_BASE_INFO_SYN
+    from NEWHL.MER_BASE_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -119,13 +119,13 @@
     </if>
   </select>
   <delete id="deleteByExample" parameterType="mybatis.model.MerBaseInfoSynExample">
-    delete from MER_BASE_INFO_SYN
+    delete from NEWHL.MER_BASE_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="mybatis.model.MerBaseInfoSyn">
-    insert into MER_BASE_INFO_SYN (MER_ID, MER_NAME, MER_PROV, 
+    insert into NEWHL.MER_BASE_INFO (MER_ID, MER_NAME, MER_PROV, 
       MER_AREA, EXP_DATE, CORP_CODE, 
       REG_CODE, MER_ADDR, MER_ZIP, 
       MER_DESC, OPEN_DATE, OPEN_TIME, 
@@ -151,7 +151,7 @@
       #{legalIdNoCover,jdbcType=VARCHAR}, #{legalIdNoCipher,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="mybatis.model.MerBaseInfoSyn">
-    insert into MER_BASE_INFO_SYN
+    insert into NEWHL.MER_BASE_INFO
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="merId != null">
         MER_ID,
@@ -368,13 +368,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="mybatis.model.MerBaseInfoSynExample" resultType="java.lang.Long">
-    select count(*) from MER_BASE_INFO_SYN
+    select count(*) from NEWHL.MER_BASE_INFO
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update MER_BASE_INFO_SYN
+    update NEWHL.MER_BASE_INFO
     <set>
       <if test="record.merId != null">
         MER_ID = #{record.merId,jdbcType=CHAR},
@@ -487,7 +487,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update MER_BASE_INFO_SYN
+    update NEWHL.MER_BASE_INFO
     set MER_ID = #{record.merId,jdbcType=CHAR},
       MER_NAME = #{record.merName,jdbcType=VARCHAR},
       MER_PROV = #{record.merProv,jdbcType=CHAR},
